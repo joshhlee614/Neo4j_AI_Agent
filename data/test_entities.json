@@ -1,7 +1,0 @@
-[
-  {"entity": "Person", "name": "Alice", "attributes": {"age": 30, "city": "New York"}},
-  {"entity": "Person", "name": "Bob", "attributes": {"age": 25}},
-  {"entity": "Company", "name": "Acme Corp", "attributes": {"founded": 1990, "industry": "Tech"}},
-  {"relationship": "FRIEND", "from": "Alice", "to": "Bob"},
-  {"relationship": "WORKS_AT", "from": "Alice", "to": "Acme Corp"}
-] 

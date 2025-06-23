@@ -1,62 +1,1399 @@
 [
   {
     "entity": "Person",
-    "name": "Alice",
+    "name": "John Nuttall",
     "attributes": {
-      "age": 30,
-      "location": "San Francisco",
-      "job_title": "Software Engineer"
+      "role": "author"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "quantitative investment management",
+    "attributes": {
+      "description": "investment management based on quantitative analysis"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "equity portfolio management",
+    "attributes": {
+      "description": "management of portfolios consisting of equities"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "quantitative investing",
+    "attributes": {
+      "techniques": "Machine Learning"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Machine Learning",
+    "attributes": {
+      "type": "technique"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "portfolio management",
+    "attributes": {
+      "description": "management of a portfolio of assets"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "assets",
+    "attributes": {
+      "type": "equities"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "universe",
+    "attributes": {
+      "definition": "set of assets"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "investment manager",
+    "attributes": {
+      "responsibilities": "increase portfolio value"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "benchmark",
+    "attributes": {
+      "comparison": "performance benchmark"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "volatility",
+    "attributes": {
+      "description": "measure of risk"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "drawdown",
+    "attributes": {
+      "description": "decrease in portfolio value"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "information collection",
+    "attributes": {
+      "steps": [
+        "raw data",
+        "derived data"
+      ]
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "raw data",
+    "attributes": {
+      "type": "data source"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "derived data",
+    "attributes": {
+      "type": "processed data"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "return prediction",
+    "attributes": {
+      "methods": [
+        "Extreme Theoretical",
+        "Intermediate",
+        "Extreme Empirical"
+      ]
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "portfolio formation",
+    "attributes": {
+      "steps": [
+        "Covariance Matrix",
+        "Optimization",
+        "Other Approaches"
+      ]
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "trading algorithm",
+    "attributes": {
+      "description": "algorithm used for trading decisions"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "Covariance Matrix",
+    "attributes": {
+      "type": "statistical method"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "Optimization",
+    "attributes": {
+      "type": "portfolio optimization"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "Machine Learning",
+    "attributes": {
+      "type": "data analysis technique"
+    }
+  },
+  {
+    "entity": "Market",
+    "name": "equity markets",
+    "attributes": {
+      "region": "global"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "INTRODUCTION TO QUANTITATIVE INVESTMENT MANAGEMENT",
+    "attributes": {
+      "date": "February 2007"
+    }
+  },
+  {
+    "relationship": "WRITTEN_BY",
+    "from": "John Nuttall",
+    "to": "INTRODUCTION TO QUANTITATIVE INVESTMENT MANAGEMENT"
+  },
+  {
+    "entity": "Method",
+    "name": "back testing simulations",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "portfolio management",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "real-time data",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "historical data",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "Raw Data",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "Derived Data",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "predictors",
+    "attributes": {}
+  },
+  {
+    "entity": "Market",
+    "name": "stock market",
+    "attributes": {}
+  },
+  {
+    "entity": "Market",
+    "name": "T-bill rate",
+    "attributes": {}
+  },
+  {
+    "entity": "Market",
+    "name": "Industrial production",
+    "attributes": {}
+  },
+  {
+    "entity": "Market",
+    "name": "Rate of inflation",
+    "attributes": {}
+  },
+  {
+    "entity": "Market",
+    "name": "Government bonds rate",
+    "attributes": {}
+  },
+  {
+    "entity": "Company",
+    "name": "S&P500",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "information processing",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "stock return prediction",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "data analysis",
+    "attributes": {}
+  },
+  {
+    "entity": "Tool",
+    "name": "pandas",
+    "attributes": {}
+  },
+  {
+    "relationship": "OBTAINS",
+    "from": "portfolio management",
+    "to": "real-time data"
+  },
+  {
+    "relationship": "REQUIRES",
+    "from": "portfolio management",
+    "to": "historical data"
+  },
+  {
+    "relationship": "DISTINGUISHES",
+    "from": "portfolio management",
+    "to": "Raw Data"
+  },
+  {
+    "relationship": "DISTINGUISHES",
+    "from": "portfolio management",
+    "to": "Derived Data"
+  },
+  {
+    "relationship": "USED_IN",
+    "from": "Derived Data",
+    "to": "information processing"
+  },
+  {
+    "relationship": "BASED_ON",
+    "from": "stock return prediction",
+    "to": "predictors"
+  },
+  {
+    "relationship": "USES",
+    "from": "information processing",
+    "to": "pandas"
+  },
+  {
+    "entity": "Person",
+    "name": "manager",
+    "attributes": {
+      "title": "investment management"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "[Ha96, Ba01]"
+  },
+  {
+    "entity": "Concept",
+    "name": "predictors",
+    "attributes": {
+      "type": "stock specific"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "return prediction"
+  },
+  {
+    "entity": "Concept",
+    "name": "portfolio formation"
+  },
+  {
+    "entity": "Concept",
+    "name": "trading algorithm"
+  },
+  {
+    "entity": "Method",
+    "name": "return prediction"
+  },
+  {
+    "entity": "Method",
+    "name": "portfolio formation"
+  },
+  {
+    "entity": "Method",
+    "name": "trading algorithm"
+  },
+  {
+    "entity": "Skill",
+    "name": "investment management"
+  },
+  {
+    "entity": "Market",
+    "name": "stock market"
+  },
+  {
+    "entity": "Tool",
+    "name": "algorithms"
+  },
+  {
+    "entity": "Tool",
+    "name": "data processing software"
+  },
+  {
+    "relationship": "USES",
+    "from": "manager",
+    "to": "algorithms"
+  },
+  {
+    "relationship": "USES",
+    "from": "manager",
+    "to": "data processing software"
+  },
+  {
+    "entity": "Concept",
+    "name": "theory",
+    "attributes": {
+      "approach": "theoretical"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "empiricist",
+    "attributes": {
+      "belief": "markets are too complicated to understand by theory"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "economics",
+    "attributes": {
+      "comparison": "fundamentally different from physics"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "patterns",
+    "attributes": {
+      "discovery": "analyzing past data"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Quantitative Equity Management",
+    "attributes": {
+      "definition": "extension of Technical Analysis as applied to equities"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Technical Analysis",
+    "attributes": {
+      "prediction": "based on past market data"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Machine Learning",
+    "attributes": {
+      "principles": "applied to QEM"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Portfolio Formation",
+    "attributes": {
+      "strategy": "choosing weights of stocks in a portfolio"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Markowitz",
+    "attributes": {
+      "reference": "[Ma59]"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "covariance matrix",
+    "attributes": {
+      "calculation": "used in portfolio variance calculation"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "optimization problem",
+    "attributes": {
+      "solving": "meeting portfolio constraints"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "Machine Learning",
+    "attributes": {
+      "application": "principles applied to QEM"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "portfolio management",
+    "attributes": {
+      "strategy": "choosing weights of stocks"
+    }
+  },
+  {
+    "entity": "Tool",
+    "name": "Machine Learning",
+    "attributes": {
+      "discipline": "used in a wide variety of fields"
+    }
+  },
+  {
+    "entity": "Market",
+    "name": "equities",
+    "attributes": {
+      "application": "Quantitative Equity Management"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Technical Analysis",
+    "attributes": {
+      "reference": "[Pr02]"
+    }
+  },
+  {
+    "relationship": "APPLIES",
+    "from": "Quantitative Equity Management",
+    "to": "Technical Analysis"
+  },
+  {
+    "relationship": "USES",
+    "from": "Quantitative Equity Management",
+    "to": "Machine Learning"
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "Portfolio Formation",
+    "to": "Markowitz"
+  },
+  {
+    "relationship": "DESCRIBES",
+    "from": "Portfolio Formation",
+    "to": "covariance matrix"
+  },
+  {
+    "entity": "Concept",
+    "name": "mean-variance optimization",
+    "attributes": {
+      "alternative approaches": true
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "trading effectiveness",
+    "attributes": {
+      "efforts to improve": true
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "covariance matrix",
+    "attributes": {
+      "extensive literature": true
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "joint probability distribution",
+    "attributes": {
+      "definition": "rarely discussed"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "predicting variance",
+    "attributes": {
+      "via time series": true
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "GARCH models",
+    "attributes": {
+      "used to predict volatility": true
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "factor and principal component methods",
+    "attributes": {
+      "estimating covariance matrix": true
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Stanley et al",
+    "attributes": {
+      "involving random matrices": true
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Michaud",
+    "attributes": {
+      "view on accuracy of predicted covariance matrices": "not very high"
     }
   },
   {
     "entity": "Person",
-    "name": "Bob",
+    "name": "Granger",
     "attributes": {
-      "job_title": "CEO",
-      "founded_company": 1990
+      "philosophy on averaging": true
     }
   },
   {
     "entity": "Person",
-    "name": "Charlie",
+    "name": "Breiman",
     "attributes": {
-      "age": 28,
-      "job_title": "Data Scientist",
-      "specialization": "Machine Learning"
+      "philosophy on averaging": true
+    }
+  },
+  {
+    "entity": "Person",
+    "name": "Michaud",
+    "attributes": {
+      "view on accuracy of predicted covariance matrices": "not very high"
     }
   },
   {
     "entity": "Company",
-    "name": "Acme Corporation",
+    "name": "Barra",
     "attributes": {
-      "founded": 1990,
-      "location": "Silicon Valley",
-      "industry": "Technology",
-      "employee_count": 500
+      "supplier of estimated covariance matrices": true
     }
   },
   {
     "entity": "Company",
-    "name": "Tech Innovations Inc",
+    "name": "Northfield",
     "attributes": {
-      "founded": 2020,
-      "industry": "Artificial Intelligence",
-      "employee_count": 50
+      "supplier of estimated covariance matrices": true
     }
   },
   {
-    "relationship": "FRIEND",
-    "from": "Alice",
-    "to": "Bob"
+    "entity": "Company",
+    "name": "APT",
+    "attributes": {
+      "supplier of estimated covariance matrices": true
+    }
   },
   {
-    "relationship": "COLLABORATOR",
-    "from": "Alice",
-    "to": "Bob"
+    "entity": "Company",
+    "name": "Quantal",
+    "attributes": {
+      "supplier of estimated covariance matrices": true
+    }
   },
   {
-    "relationship": "ACQUAINTANCE",
-    "from": "Charlie",
-    "to": "Alice"
+    "entity": "Tool",
+    "name": "optimization software package",
+    "attributes": {
+      "included by commercial suppliers": true
+    }
+  },
+  {
+    "relationship": "INCLUDES",
+    "from": "Barra",
+    "to": "optimization software package"
+  },
+  {
+    "relationship": "INCLUDES",
+    "from": "Northfield",
+    "to": "optimization software package"
+  },
+  {
+    "relationship": "INCLUDES",
+    "from": "APT",
+    "to": "optimization software package"
+  },
+  {
+    "relationship": "INCLUDES",
+    "from": "Quantal",
+    "to": "optimization software package"
+  },
+  {
+    "entity": "Method",
+    "name": "quadratic programming",
+    "attributes": {
+      "type": "constrained"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "SVM",
+    "attributes": {
+      "author": "Collobert/Bengio"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "portfolio formation",
+    "attributes": {
+      "approach": "directly from predictors"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "Machine Learning",
+    "attributes": {
+      "formalism": "equity return prediction"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "equity return prediction",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "Sample formation",
+    "attributes": {
+      "description": "collect and organize information"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "Predictor function",
+    "attributes": {
+      "description": "function of predictors for expected return"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "Training",
+    "attributes": {
+      "description": "choosing parameters for predictor function"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "Choices",
+    "attributes": {
+      "description": "discussion of choices for QEM method"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "QEM method",
+    "attributes": {
+      "specificity": "choices must be made"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "times",
+    "attributes": {
+      "description": "set of past, present, and future times"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "periods",
+    "attributes": {
+      "description": "time intervals between successive times"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "stocks",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "universe",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "return",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "holding period",
+    "attributes": {
+      "length": "H"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "predictors",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "samples",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "prediction function",
+    "attributes": {}
+  },
+  {
+    "entity": "Method",
+    "name": "linear regression",
+    "attributes": {
+      "type": "statistical"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "learning",
+    "attributes": {}
+  },
+  {
+    "entity": "Method",
+    "name": "training",
+    "attributes": {}
+  },
+  {
+    "relationship": "PREDICTS",
+    "from": "prediction function",
+    "to": "return"
+  },
+  {
+    "relationship": "USES",
+    "from": "prediction function",
+    "to": "predictors"
+  },
+  {
+    "relationship": "USES",
+    "from": "prediction function",
+    "to": "samples"
+  },
+  {
+    "relationship": "USES",
+    "from": "learning",
+    "to": "samples"
+  },
+  {
+    "relationship": "USES",
+    "from": "learning",
+    "to": "predictor vector"
+  },
+  {
+    "relationship": "USES",
+    "from": "learning",
+    "to": "return"
+  },
+  {
+    "entity": "Concept",
+    "name": "acceptable function",
+    "attributes": {
+      "description": "closest to satisfying a relation"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "prediction function",
+    "attributes": {
+      "description": "form for predicting future returns"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "linear regression",
+    "attributes": {
+      "type": "statistical"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "parameter vector optimization",
+    "attributes": {
+      "description": "finding the parameter vector that specifies the function"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "distribution analysis",
+    "attributes": {
+      "description": "analyzing distribution of actual returns"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "noise analysis",
+    "attributes": {
+      "description": "understanding noise in the process"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "function form selection",
+    "attributes": {
+      "description": "choosing a form for the prediction function"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "search restriction",
+    "attributes": {
+      "description": "restricting search for prediction functions"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "acceptable function definition",
+    "attributes": {
+      "description": "defining acceptable functions"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "fluctuation analysis",
+    "attributes": {
+      "description": "analyzing fluctuations in predictor space"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "mean squared error",
+    "attributes": {
+      "definition": "measures extent of error"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "neural networks minimization",
+    "attributes": {
+      "difficulty": "finding global minimum"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "holding period",
+    "attributes": {
+      "type": "financial"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "return prediction",
+    "attributes": {
+      "type": "financial"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "quantitative equity management",
+    "attributes": {
+      "type": "investment"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "machine learning",
+    "attributes": {
+      "type": "technical"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "investment managers",
+    "attributes": {
+      "type": "financial"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "academic literature",
+    "attributes": {
+      "field": "financial economics"
+    }
+  },
+  {
+    "relationship": "USES",
+    "from": "investment managers",
+    "to": "quantitative equity management"
+  },
+  {
+    "relationship": "APPLIES",
+    "from": "investment managers",
+    "to": "machine learning"
+  },
+  {
+    "entity": "Person",
+    "name": "Haugen",
+    "attributes": {
+      "role": "author"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Machine Learning",
+    "attributes": {
+      "description": "ideas used in QEM method"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "linear model",
+    "attributes": {
+      "description": "commonly used in fitting empirical data"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "predictors",
+    "attributes": {
+      "description": "used in predicting returns of US stocks"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Box-Cox transformation",
+    "attributes": {
+      "description": "used to normalize predictors"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "multi-linear regression",
+    "attributes": {
+      "description": "used to approximate values of parameters"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "[Ha96]",
+    "attributes": {
+      "title": "describes a model for predicting returns of US stocks"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "[Ba01]",
+    "attributes": {
+      "title": "mentions linear function of predictors"
+    }
+  },
+  {
+    "entity": "Market",
+    "name": "US stocks",
+    "attributes": {
+      "type": "equity"
+    }
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "Haugen",
+    "to": "Machine Learning"
+  },
+  {
+    "relationship": "DESCRIBES",
+    "from": "[Ha96]",
+    "to": "predicting returns of US stocks"
+  },
+  {
+    "relationship": "APPLIES",
+    "from": "Haugen",
+    "to": "linear model"
+  },
+  {
+    "relationship": "USES",
+    "from": "Haugen",
+    "to": "Box-Cox transformation"
+  },
+  {
+    "relationship": "APPLIES",
+    "from": "Haugen",
+    "to": "multi-linear regression"
+  },
+  {
+    "entity": "Person",
+    "name": "Haugen",
+    "attributes": {
+      "role": "author"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "investment advisory firm",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "extrapolation",
+    "attributes": {}
+  },
+  {
+    "entity": "Method",
+    "name": "linear regression",
+    "attributes": {}
+  },
+  {
+    "entity": "Method",
+    "name": "portfolio formation",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "investment advisory",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "portfolio management",
+    "attributes": {}
+  },
+  {
+    "entity": "Publication",
+    "name": "Hanna and Ready",
+    "attributes": {}
+  },
+  {
+    "relationship": "BASED_ON",
+    "from": "investment advisory firm",
+    "to": "Haugen"
+  },
+  {
+    "relationship": "STUDIED_BY",
+    "from": "Hanna and Ready",
+    "to": "Haugen"
+  },
+  {
+    "relationship": "USES",
+    "from": "Haugen",
+    "to": "linear regression"
+  },
+  {
+    "relationship": "APPLIES",
+    "from": "Haugen",
+    "to": "portfolio formation"
+  },
+  {
+    "entity": "Concept",
+    "name": "Technical factors",
+    "attributes": {
+      "definition": "excess return of the stock"
+    }
+  },
+  {
+    "entity": "Market",
+    "name": "S&P 500",
+    "attributes": {
+      "region": "US"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "extrapolation",
+    "attributes": {
+      "accuracy": "low"
+    }
+  },
+  {
+    "entity": "Person",
+    "name": "Haugen",
+    "attributes": {
+      "role": "advisor"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "simulation",
+    "attributes": {
+      "elements": "ML"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "Cooper",
+    "attributes": {
+      "industry": "portfolio management"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "machine learning",
+    "attributes": {
+      "application": "portfolio management"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Cooper [Co99]",
+    "attributes": {
+      "type": "article"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Ya06",
+    "attributes": {
+      "type": "working paper"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "data analysis",
+    "attributes": {
+      "technique": "ML"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "predictors",
+    "attributes": {
+      "definition": "variables used for prediction"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "return prediction function",
+    "attributes": {
+      "calculation": "deciles"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "statistical analysis",
+    "attributes": {
+      "method": "decile calculation"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "deciles",
+    "attributes": {
+      "definition": "dividing data into ten equal parts"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "historical distribution",
+    "attributes": {
+      "timeframe": "previous 15 years"
+    }
+  },
+  {
+    "entity": "Person",
+    "name": "Cooper",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "predicted return",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "stock",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "week",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "label",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "cell",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "predictor vector",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "prediction functions",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "step function",
+    "attributes": {}
+  },
+  {
+    "entity": "Concept",
+    "name": "portfolio",
+    "attributes": {}
+  },
+  {
+    "entity": "Publication",
+    "name": "ML Sec.1.2.2",
+    "attributes": {}
+  },
+  {
+    "entity": "Publication",
+    "name": "Cooper [C099]",
+    "attributes": {}
+  },
+  {
+    "entity": "Publication",
+    "name": "Haugen [Ha96]",
+    "attributes": {}
+  },
+  {
+    "entity": "Method",
+    "name": "procedure",
+    "attributes": {}
+  },
+  {
+    "entity": "Method",
+    "name": "elaboration",
+    "attributes": {}
+  },
+  {
+    "entity": "Method",
+    "name": "Portfolio Formation",
+    "attributes": {}
+  },
+  {
+    "entity": "Method",
+    "name": "ML method",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "ML",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "portfolio returns analysis",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "continuous function approximation",
+    "attributes": {}
+  },
+  {
+    "entity": "Market",
+    "name": "stock market",
+    "attributes": {}
+  },
+  {
+    "relationship": "USES",
+    "from": "Cooper",
+    "to": "ML Sec.1.2.2"
+  },
+  {
+    "relationship": "USES",
+    "from": "Cooper",
+    "to": "Haugen [Ha96]"
+  },
+  {
+    "entity": "Method",
+    "name": "neural networks",
+    "attributes": {
+      "global": true
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "pseudo-local method",
+    "attributes": {
+      "continuous": true
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Investing for the Long Run when Returns Are Predictable",
+    "attributes": {
+      "author": "N. Barberis",
+      "year": 2000
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Estimating Nonlinear Effects of Management Styles in the US Equity Market",
+    "attributes": {
+      "authors": [
+        "D. di Bartolomeo",
+        "S. Warrick"
+      ],
+      "year": 2001
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Optimal Algorithmic Trading",
+    "attributes": {
+      "author": "D. di Bartolomeo",
+      "year": 2005
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Bagging predictors",
+    "attributes": {
+      "author": "L. Breiman",
+      "year": 1996
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Statistical modeling: The two cultures",
+    "attributes": {
+      "author": "L. Breiman",
+      "year": 2001
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Parametric Portfolio Policies: Exploiting Characteristics in the Cross-Section of Equity Returns",
+    "attributes": {
+      "authors": [
+        "M. W. Brandt",
+        "P. Santa-Clara",
+        "R. Valkanov"
+      ],
+      "year": 2005
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Filter Rules Based on Price and Volume in Individual Security Overreaction",
+    "attributes": {
+      "author": "M. Cooper",
+      "year": 1999
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "SVMTorch: Support Vector Machines for Large-Scale Regression",
+    "attributes": {
+      "authors": [
+        "R. Collobert",
+        "S. Bengio"
+      ]
+    }
   }
 ]

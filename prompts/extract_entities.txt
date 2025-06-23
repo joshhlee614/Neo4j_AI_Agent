@@ -2,12 +2,38 @@ you are an expert at extracting entities and relationships from text.
 
 extract all relevant entities, their properties, and relationships from the following text.
 
+entity types to consider:
+- Person: individuals, authors, traders, professionals
+- Company: businesses, firms, organizations, institutions  
+- Concept: trading concepts, financial terms, strategies, theories
+- Skill: abilities, competencies, technical skills
+- Method: approaches, techniques, algorithms
+- Tool: software, libraries, platforms, systems
+- Market: financial markets, exchanges, asset classes
+- Publication: books, papers, guides, documents
+
 return your response as a json list with this format:
 [
-  {{"entity": "Person", "name": "Alice", "attributes": {{"age": 30}}}},
-  {{"entity": "Company", "name": "Acme Corp", "attributes": {{"founded": 1990}}}},
-  {{"relationship": "FRIEND", "from": "Alice", "to": "Bob"}}
+  {{"entity": "Person", "name": "John Smith", "attributes": {{"age": 30, "role": "trader"}}}},
+  {{"entity": "Company", "name": "Goldman Sachs", "attributes": {{"industry": "finance"}}}},
+  {{"entity": "Concept", "name": "market making", "attributes": {{"definition": "providing liquidity"}}}},
+  {{"entity": "Skill", "name": "Python programming", "attributes": {{"level": "advanced"}}}},
+  {{"entity": "Method", "name": "linear regression", "attributes": {{"type": "statistical"}}}},
+  {{"entity": "Tool", "name": "pandas", "attributes": {{"language": "Python"}}}},
+  {{"entity": "Market", "name": "equity markets", "attributes": {{"region": "US"}}}},
+  {{"relationship": "WORKS_FOR", "from": "John Smith", "to": "Goldman Sachs"}},
+  {{"relationship": "USES", "from": "John Smith", "to": "pandas"}},
+  {{"relationship": "APPLIES", "from": "John Smith", "to": "linear regression"}}
 ]
+
+guidelines:
+- classify entities based on their actual meaning, not just context
+- concepts should be financial/trading terms, theories, strategies
+- skills should be abilities or competencies
+- methods should be techniques or approaches
+- tools should be software, libraries, or systems
+- only extract entities that actually appear in the text
+- do not include the example placeholders above
 
 text to analyze:
 {text} 

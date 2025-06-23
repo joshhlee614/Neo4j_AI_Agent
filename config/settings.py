@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-# Force reload environment variables to fix caching issues
+# force reload environment variables
 load_dotenv(override=True)
 
 NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7689")

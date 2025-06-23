@@ -2,15 +2,42 @@ you are an expert at designing graph database schemas.
 
 given the following extracted entities and relationships, design a comprehensive neo4j schema.
 
+important formatting rules:
+- node labels MUST NOT contain spaces or special characters
+- convert multi-word labels to PascalCase (e.g. "Machine Learning" → "MachineLearning", "Data Type" → "DataType")
+- keep labels concise but descriptive
+- relationship types should use UPPER_CASE_WITH_UNDERSCORES
+- group similar entities under consistent labels (e.g., all trading concepts under "Concept")
+
+standard entity types to use:
+- Person: individuals, authors, professionals
+- Company: businesses, organizations, institutions
+- Concept: trading concepts, financial terms, theories
+- Skill: abilities, competencies, technical skills  
+- Method: techniques, approaches, algorithms
+- Tool: software, libraries, platforms
+- Market: financial markets, exchanges
+- Publication: books, papers, documents
+
 return your response as json with this format:
 {{
   "nodes": {{
-    "Person": ["name", "age"],
-    "Company": ["name", "founded"]
+    "Person": ["name", "age", "role"],
+    "Company": ["name", "industry", "founded"],
+    "Concept": ["name", "definition", "category"],
+    "Skill": ["name", "level", "domain"],
+    "Method": ["name", "type", "description"],
+    "Tool": ["name", "language", "purpose"],
+    "Market": ["name", "region", "asset_class"],
+    "Publication": ["name", "author", "year"]
   }},
   "edges": {{
     "WORKS_FOR": {{"from": "Person", "to": "Company"}},
-    "FRIENDS_WITH": {{"from": "Person", "to": "Person"}}
+    "USES": {{"from": "Person", "to": "Tool"}},
+    "APPLIES": {{"from": "Person", "to": "Method"}},
+    "TRADES_IN": {{"from": "Person", "to": "Market"}},
+    "MENTIONS": {{"from": "Publication", "to": "Concept"}},
+    "REQUIRES": {{"from": "Method", "to": "Skill"}}
   }}
 }}
 

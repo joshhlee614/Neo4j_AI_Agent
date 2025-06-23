@@ -14,40 +14,40 @@ from services.neo4j_service import run_cypher_real
 
 
 def run_build_pipeline(input_file: str, ingest_to_neo4j: bool = False) -> None:
-    """orchestrates the full pipeline: text -> schema -> cypher -> neo4j"""
+    """runs the full build pipeline"""
     print(f"starting build pipeline for: {input_file}")
     
     try:
-        # step 1: ingest and chunk file
-        print("step 1: loading and chunking file...")
+        # load and chunk file
+        print("loading and chunking file...")
         chunks = load_and_chunk_file(input_file)
         print(f"created {len(chunks)} chunks")
         
-        # step 2: extract entities from chunks
-        print("step 2: extracting entities...")
+        # extract entities from chunks
+        print("extracting entities...")
         entities = extract_entities_from_chunks(chunks)
         print(f"extracted {len(entities)} entities/relationships")
         
-        # step 3: generate schema from entities
-        print("step 3: generating schema...")
+        # generate schema from entities
+        print("generating schema...")
         schema = generate_schema_from_entities(entities)
         node_count = len(schema.get("nodes", {}))
         edge_count = len(schema.get("edges", {}))
         print(f"generated schema with {node_count} node types and {edge_count} edge types")
         
-        # step 4: generate cypher from schema and entities
-        print("step 4: generating cypher...")
+        # generate cypher from schema and entities
+        print("generating cypher...")
         cypher = generate_cypher_from_schema(schema, entities)
         cypher_lines = len([line for line in cypher.split('\n') if line.strip()])
         print(f"generated {cypher_lines} cypher statements")
         
-        # step 5: save outputs
-        print("step 5: saving outputs...")
+        # save outputs
+        print("saving outputs...")
         save_pipeline_outputs(entities, schema, cypher, input_file)
         
-        # step 6: ingest to neo4j (optional)
+        # ingest to neo4j if requested
         if ingest_to_neo4j:
-            print("step 6: ingesting to neo4j...")
+            print("ingesting to neo4j...")
             ingest_cypher_to_neo4j(cypher)
         
         print("pipeline completed successfully!")
@@ -61,7 +61,7 @@ def run_build_pipeline(input_file: str, ingest_to_neo4j: bool = False) -> None:
 
 
 def ingest_cypher_to_neo4j(cypher: str) -> None:
-    """ingests cypher statements into neo4j database using run_cypher_real()"""
+    """executes cypher statements in neo4j"""
     # split cypher into individual statements
     statements = [stmt.strip() for stmt in cypher.split(';') if stmt.strip()]
     
@@ -105,7 +105,7 @@ def ingest_cypher_to_neo4j(cypher: str) -> None:
 
 
 def save_pipeline_outputs(entities: list, schema: dict, cypher: str, input_file: str) -> None:
-    """saves all pipeline outputs to data/ directory"""
+    """saves outputs to data directory"""
     # ensure data directory exists
     data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
     os.makedirs(data_dir, exist_ok=True)
@@ -142,7 +142,7 @@ def save_pipeline_outputs(entities: list, schema: dict, cypher: str, input_file:
     with open(os.path.join(data_dir, "latest_cypher.cypher"), "w") as f:
         f.write(cypher)
     
-    # save to task 11 required filenames
+    # save to standard output filenames
     with open(os.path.join(data_dir, "schema_output.json"), "w") as f:
         json.dump(schema, f, indent=2)
     print(f"schema saved to: {os.path.join(data_dir, 'schema_output.json')}")

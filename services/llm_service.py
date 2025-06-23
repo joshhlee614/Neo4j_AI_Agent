@@ -52,7 +52,7 @@ def generate_cypher_mock(prompt: str) -> str:
         return "MATCH (n) RETURN n LIMIT 10"
 
 def extract_cypher_from_response(response_text: str) -> str:
-    """extract cypher query from llm response, handling code blocks and extra text"""
+    """extract cypher from llm response"""
     # look for cypher in code blocks first
     cypher_match = re.search(r'```(?:cypher)?\s*(.*?)\s*```', response_text, re.DOTALL | re.IGNORECASE)
     if cypher_match:
@@ -90,7 +90,7 @@ def extract_cypher_from_response(response_text: str) -> str:
     return response_text.strip()
 
 def generate_cypher_real(prompt: str) -> str:
-    """real openai api cypher generation with proper error handling"""
+    """generate cypher using openai api"""
     if not client:
         # no valid api key or client initialization failed
         return generate_cypher_mock(prompt)

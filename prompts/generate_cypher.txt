@@ -10,18 +10,33 @@ formatting requirements:
 - string values must be in double quotes
 - numeric values should not be quoted
 - boolean values should be lowercase (true/false)
+- node labels MUST NOT contain spaces - convert multi-word labels to PascalCase (e.g. "Machine Learning" becomes "MachineLearning", "Data Type" becomes "DataType")
+- property names MUST NOT contain spaces - convert to snake_case (e.g. "frequency of use" becomes "frequency_of_use", "birth date" becomes "birth_date")
+- DO NOT include properties with null values (MERGE cannot handle null properties)
 
-example 1 - person and company:
-CREATE (a:Person {{name: "Alice", age: 30, city: "New York"}});
-CREATE (b:Company {{name: "Acme Corp", founded: 1990}});
-CREATE (a)-[:WORKS_AT]->(b);
+deduplication requirements:
+- use MERGE instead of CREATE to avoid duplicates
+- if the same entity appears multiple times, only create it once
+- do not generate repetitive identical statements
+- group similar entities together
+
+example 1 - person and company (note: no null properties, no spaces in property names):
+MERGE (a:Person {{name: "Alice", age: 30, job_title: "Engineer"}});
+MERGE (b:Company {{name: "Acme Corp", founded: 1990, employee_count: 100}});
+MERGE (a)-[:WORKS_AT]->(b);
 
 example 2 - movies and actors:
-CREATE (m:Movie {{name: "The Matrix", year: 1999}});
-CREATE (a:Actor {{name: "Keanu Reeves", age: 59}});
-CREATE (a)-[:ACTED_IN]->(m);
+MERGE (m:Movie {{name: "The Matrix", year: 1999, box_office: 463517383}});
+MERGE (a:Actor {{name: "Keanu Reeves", age: 59, birth_place: "Beirut"}});
+MERGE (a)-[:ACTED_IN]->(m);
 
-return only valid cypher create statements, one per line, no explanations.
+example 3 - multi-word labels and property names:
+MERGE (a:MachineLearning {{algorithm: "SVM", accuracy_score: 0.95}});
+MERGE (b:DataType {{name: "Historical data", data_source: "NYSE"}});
+MERGE (c:TechnicalAnalysis {{method: "Moving averages", time_period: 20}});
+
+return only valid cypher statements, one per line, no explanations.
+avoid generating more than 50 statements total.
 
 schema:
 {schema}

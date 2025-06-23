@@ -18,7 +18,7 @@ def format_table(results: list) -> str:
     # clean up column names for display
     display_columns = []
     for col in columns:
-        # convert p.name -> Name, c.name -> Country, etc.
+        # convert p.name to Name, c.name to Country, etc
         if '.' in col:
             prefix, suffix = col.split('.', 1)
             if suffix == 'name':

@@ -37,6 +37,17 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
-# project documentation (not for repository)
+# Data files (except sample)
+data/*.pdf
+data/*.cypher
+data/*.json
+!data/sample_input.txt
+
+# Debug and temporary files
+debug_*.py
+test_*.py
+*_debug.py
+
+# Project planning documents
 tasks.md
 architecture.md 

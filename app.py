@@ -58,7 +58,7 @@ def main():
             print("build complete!")
             if ingest_to_neo4j:
                 print("knowledge graph is now available for querying")
-                print("try: python app.py \"who is friends with alice?\"")
+                print("try: python app.py \"your question here\"")
             else:
                 print("to ingest to neo4j, run with --ingest flag")
         

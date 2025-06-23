@@ -10,7 +10,7 @@ from services.llm_service import client, USE_MOCK_LLM, MODEL, TEMPERATURE
 
 
 def extract_entities_from_chunks(text_chunks: list[str]) -> list[dict]:
-    """extracts entities and relationships from text chunks using llm"""
+    """extracts entities from text chunks"""
     all_entities = []
     
     for chunk in text_chunks:
@@ -33,7 +33,7 @@ def extract_entities_from_text(text: str) -> list[dict]:
 
 
 def load_extraction_prompt(text: str) -> str:
-    """loads and formats the entity extraction prompt template"""
+    """loads extraction prompt template"""
     try:
         # adjust path for running from builder directory
         prompt_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "prompts", "extract_entities.txt")
@@ -59,7 +59,7 @@ def extract_entities_mock(text: str) -> str:
     text_lower = text.lower()
     entities = []
     
-    # extract people - using tasks.md format
+    # extract people
     if "alice" in text_lower:
         entities.append({"entity": "Person", "name": "Alice", "attributes": {"age": 30}})
     if "bob" in text_lower:
@@ -67,13 +67,13 @@ def extract_entities_mock(text: str) -> str:
     if "charlie" in text_lower:
         entities.append({"entity": "Person", "name": "Charlie", "attributes": {"age": 28}})
     
-    # extract companies - using tasks.md format
+    # extract companies
     if "acme" in text_lower:
         entities.append({"entity": "Company", "name": "Acme Corporation", "attributes": {"founded": 1990}})
     if "tech innovations" in text_lower:
         entities.append({"entity": "Company", "name": "Tech Innovations Inc", "attributes": {"founded": 2020}})
     
-    # extract relationships - using tasks.md format
+    # extract relationships
     if "friends" in text_lower and "alice" in text_lower and "bob" in text_lower:
         entities.append({"relationship": "FRIEND", "from": "Alice", "to": "Bob"})
     
@@ -110,7 +110,7 @@ def extract_entities_real(prompt: str) -> str:
 
 
 def format_entities_output(raw_llm_response: str) -> list[dict]:
-    """parses llm response into structured entity format"""
+    """parses llm response into entities"""
     try:
         # try to parse as json directly
         if raw_llm_response.strip().startswith('['):

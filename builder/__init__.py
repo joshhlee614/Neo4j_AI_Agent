@@ -1,1 +1,1 @@
-# builder module for llm-powered knowledge graph construction 
+# builder module for knowledge graph construction 

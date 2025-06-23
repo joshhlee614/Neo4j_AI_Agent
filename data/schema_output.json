@@ -1,0 +1,32 @@
+{
+  "nodes": {
+    "Person": [
+      "name",
+      "age",
+      "location",
+      "job_title",
+      "specialization"
+    ],
+    "Company": [
+      "name",
+      "founded",
+      "location",
+      "industry",
+      "employee_count"
+    ]
+  },
+  "edges": {
+    "WORKS_FOR": {
+      "from": "Person",
+      "to": "Company"
+    },
+    "FRIENDS_WITH": {
+      "from": "Person",
+      "to": "Person"
+    },
+    "ACQUAINTANCE": {
+      "from": "Person",
+      "to": "Person"
+    }
+  }
+}

@@ -89,6 +89,15 @@ def save_pipeline_outputs(entities: list, schema: dict, cypher: str, input_file:
     
     with open(os.path.join(data_dir, "latest_cypher.cypher"), "w") as f:
         f.write(cypher)
+    
+    # save to task 11 required filenames
+    with open(os.path.join(data_dir, "schema_output.json"), "w") as f:
+        json.dump(schema, f, indent=2)
+    print(f"schema saved to: {os.path.join(data_dir, 'schema_output.json')}")
+    
+    with open(os.path.join(data_dir, "cypher_output.cypher"), "w") as f:
+        f.write(cypher)
+    print(f"cypher saved to: {os.path.join(data_dir, 'cypher_output.cypher')}")
 
 
 def main():

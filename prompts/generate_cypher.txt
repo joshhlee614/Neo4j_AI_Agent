@@ -1,0 +1,16 @@
+you are an expert at writing neo4j cypher queries.
+
+convert the following schema and entity data into cypher create statements.
+
+use this format:
+CREATE (a:Person {{name: "alice", age: 30}});
+CREATE (b:Company {{name: "acme corp", founded: 1990}});
+CREATE (a)-[:WORKS_FOR]->(b);
+
+return only valid cypher statements, one per line.
+
+schema:
+{schema}
+
+entities:
+{entities} 

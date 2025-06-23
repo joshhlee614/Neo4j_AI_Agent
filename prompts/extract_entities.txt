@@ -1,0 +1,13 @@
+you are an expert at extracting entities and relationships from text.
+
+extract all relevant entities, their properties, and relationships from the following text.
+
+return your response as a json list with this format:
+[
+  {"type": "entity", "label": "Person", "name": "alice", "properties": {"age": 30}},
+  {"type": "entity", "label": "Company", "name": "acme corp", "properties": {"founded": 1990}},
+  {"type": "relationship", "label": "WORKS_FOR", "from": "alice", "to": "acme corp"}
+]
+
+text to analyze:
+{text} 

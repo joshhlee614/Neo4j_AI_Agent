@@ -78,11 +78,29 @@ def format_table(results: list) -> str:
     
     return "\n".join(table_lines)
 
+def format_cypher_query(query: str) -> str:
+    """format cypher query in a nice code block"""
+    # calculate width based on query length + padding
+    query_width = len(query) + 4
+    min_width = len("generated cypher:") + 4
+    width = max(query_width, min_width, 50)
+    
+    lines = []
+    lines.append("generated cypher:")
+    lines.append("┌" + "─" * (width - 2) + "┐")
+    lines.append(f"│ {query:<{width - 4}} │")
+    lines.append("└" + "─" * (width - 2) + "┘")
+    
+    return "\n".join(lines)
+
 def format_response(question: str, cypher_query: str, results: list) -> str:
     output = []
     
     output.append(f"question: {question}")
-    output.append(f"generated cypher: {cypher_query}")
+    output.append("")
+    
+    # display cypher query prominently
+    output.append(format_cypher_query(cypher_query))
     output.append("")
     
     if not results:

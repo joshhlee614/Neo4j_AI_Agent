@@ -29,6 +29,11 @@ def answer_question(question: str) -> str:
     cypher = generate_cypher(prompt)
     log_verbose(f"Generated Cypher: {cypher}")
     
+    # check if it's a safety message (not a query)
+    if cypher.startswith("I can only read data"):
+        log_verbose("Safety message detected, skipping database execution")
+        return f"question: {question}\n\n🛡️  {cypher}"
+    
     # execute query against database
     log_verbose("Executing query against Neo4j...")
     results = run_cypher(cypher)

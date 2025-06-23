@@ -2,7 +2,7 @@ import sys
 from agent.agent_runner import answer_question
 
 print("neo4j ai assistant")
-print("ask questions about people, countries, and products")
+print("ask questions about assets, countries, and financial data")
 print("-" * 50)
 
 # handle command line argument or prompt for input

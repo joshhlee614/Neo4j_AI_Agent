@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 # Force reload environment variables to fix caching issues
 load_dotenv(override=True)
 
-NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7689")
 NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "your_password")
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "sk-...")
-MODEL = os.getenv("OPENAI_MODEL", "gpt-4")
+MODEL = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
 TEMPERATURE = float(os.getenv("OPENAI_TEMPERATURE", "0.3"))
 
 # mock toggles for development

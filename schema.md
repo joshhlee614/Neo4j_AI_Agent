@@ -1,10 +1,17 @@
 # Graph Schema
 
 ## Nodes
-- Person(name)
+- Asset(community, id, type)
+- Cluster(id, label)
 - Country(name)
-- Product(name)
+- Date(date)
+- MacroIndicator(code, frequency, name, source)
+- Year(year)
 
 ## Relationships
-- (Person)-[:LIVES_IN]->(Country)
-- (Person)-[:BUYS]->(Product) 
+- (Cluster)-[:HAS_AVG_PRICE]->(Date)
+- (Country)-[:HAS_INDICATOR]->(Year)
+- (Asset)-[:HAS_PRICE]->(Date)
+- (Date)-[:HAS_VALUE]->(MacroIndicator)
+- (MacroIndicator)-[:HAS_VALUE]->(Date)
+- (Asset)-[:SIMILAR]->(Asset) 

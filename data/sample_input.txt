@@ -1,0 +1,9 @@
+alice works at acme corporation as a software engineer. she is 30 years old and lives in san francisco.
+
+bob is the ceo of acme corporation. he founded the company in 1990 and has been leading it ever since. bob is friends with alice and they often collaborate on projects.
+
+charlie is a data scientist at tech innovations inc. he is 28 years old and specializes in machine learning. charlie knows alice from university and they stay in touch.
+
+acme corporation is a technology company based in silicon valley. the company develops software solutions for businesses and has 500 employees.
+
+tech innovations inc is a startup focused on artificial intelligence. the company was founded in 2020 and has 50 employees. 

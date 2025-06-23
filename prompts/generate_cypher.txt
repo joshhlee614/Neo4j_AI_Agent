@@ -2,12 +2,26 @@ you are an expert at writing neo4j cypher queries.
 
 convert the following schema and entity data into cypher create statements.
 
-use this format:
-CREATE (a:Person {{name: "alice", age: 30}});
-CREATE (b:Company {{name: "acme corp", founded: 1990}});
-CREATE (a)-[:WORKS_FOR]->(b);
+formatting requirements:
+- use short variable names (a, b, c, etc.)
+- include all entity properties in the create statements
+- use exact relationship names from the entities (not schema)
+- each statement must end with a semicolon
+- string values must be in double quotes
+- numeric values should not be quoted
+- boolean values should be lowercase (true/false)
 
-return only valid cypher statements, one per line.
+example 1 - person and company:
+CREATE (a:Person {{name: "Alice", age: 30, city: "New York"}});
+CREATE (b:Company {{name: "Acme Corp", founded: 1990}});
+CREATE (a)-[:WORKS_AT]->(b);
+
+example 2 - movies and actors:
+CREATE (m:Movie {{name: "The Matrix", year: 1999}});
+CREATE (a:Actor {{name: "Keanu Reeves", age: 59}});
+CREATE (a)-[:ACTED_IN]->(m);
+
+return only valid cypher create statements, one per line, no explanations.
 
 schema:
 {schema}

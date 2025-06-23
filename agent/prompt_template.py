@@ -10,5 +10,4 @@ question: {question}
 
 return only the cypher query, no explanation."""
     
-    print(f"built prompt: {prompt}")
     return prompt 

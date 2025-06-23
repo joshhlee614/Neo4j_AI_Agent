@@ -1,4 +1,5 @@
 from neo4j import GraphDatabase
+from neo4j.exceptions import ServiceUnavailable, AuthError, DriverError
 from config.settings import NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD, USE_MOCK_NEO4J
 
 def run_cypher_mock(query: str) -> list:
@@ -31,17 +32,38 @@ def run_cypher_mock(query: str) -> list:
             {"name": "Laptop"}
         ]
 
+def create_error_response(error_type: str, message: str) -> list:
+    """create structured error response for the output formatter"""
+    return [{"status": "database_error", "error_type": error_type, "message": message}]
+
 def run_cypher_real(query: str) -> list:
-    """real neo4j database query execution"""
+    """real neo4j database query execution with detailed error handling"""
     try:
         with GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD)) as driver:
             with driver.session() as session:
                 result = session.run(query)
                 records = [dict(record) for record in result]
                 return records
+    except ServiceUnavailable:
+        return create_error_response(
+            "connection_failed", 
+            "Neo4j database is not available. Please check if the database is running."
+        )
+    except AuthError:
+        return create_error_response(
+            "authentication_failed",
+            "Authentication failed. Please check your database credentials."
+        ) 
+    except DriverError as e:
+        return create_error_response(
+            "driver_error",
+            f"Database driver error: {str(e)}"
+        )
     except Exception as e:
-        # fallback to mock on database error
-        return run_cypher_mock(query)
+        return create_error_response(
+            "unknown_error", 
+            f"Unexpected database error: {str(e)}"
+        )
 
 def run_cypher(query: str) -> list:
     """main entry point - routes to mock or real based on toggle"""

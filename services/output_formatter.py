@@ -105,7 +105,32 @@ def format_response(question: str, cypher_query: str, results: list) -> str:
     
     if not results:
         output.append("no results found")
+    elif len(results) == 1 and results[0].get('status') == 'database_error':
+        # handle database error responses
+        error = results[0]
+        error_type = error.get('error_type', 'unknown')
+        message = error.get('message', 'Database error occurred')
+        
+        output.append("⚠️  database error:")
+        output.append(f"┌─ {message}")
+        output.append("")
+        
+        # provide helpful suggestions based on error type
+        if error_type == 'connection_failed':
+            output.append("suggestions:")
+            output.append("• Check if Neo4j is running: docker ps")
+            output.append("• Start Neo4j: docker start neo4j-ai") 
+            output.append("• Check connection: http://localhost:7474")
+        elif error_type == 'authentication_failed':
+            output.append("suggestions:")
+            output.append("• Check NEO4J_USER and NEO4J_PASSWORD in .env file")
+            output.append("• Verify credentials in Neo4j browser")
+        
+        output.append("")
+        output.append("💡 tip: you can enable mock mode to continue testing")
+        output.append("   set USE_MOCK_NEO4J=true in .env file")
     elif len(results) == 1 and results[0].get('status') == 'connection_failed':
+        # legacy fallback handling
         output.append("note: using sample data (database not connected)")
         output.append("sample results:")
         output.append("- alice (person)")

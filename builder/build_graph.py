@@ -10,9 +10,10 @@ from builder.ingest_pdf import load_and_chunk_file
 from builder.extract_entities import extract_entities_from_chunks
 from builder.generate_schema import generate_schema_from_entities
 from builder.generate_cypher import generate_cypher_from_schema
+from services.neo4j_service import run_cypher_real
 
 
-def run_build_pipeline(input_file: str) -> None:
+def run_build_pipeline(input_file: str, ingest_to_neo4j: bool = False) -> None:
     """orchestrates the full pipeline: text -> schema -> cypher -> neo4j"""
     print(f"starting build pipeline for: {input_file}")
     
@@ -44,12 +45,63 @@ def run_build_pipeline(input_file: str) -> None:
         print("step 5: saving outputs...")
         save_pipeline_outputs(entities, schema, cypher, input_file)
         
+        # step 6: ingest to neo4j (optional)
+        if ingest_to_neo4j:
+            print("step 6: ingesting to neo4j...")
+            ingest_cypher_to_neo4j(cypher)
+        
         print("pipeline completed successfully!")
         print("outputs saved to data/ directory")
+        if ingest_to_neo4j:
+            print("data ingested to neo4j database")
         
     except Exception as e:
         print(f"pipeline failed: {e}")
         raise
+
+
+def ingest_cypher_to_neo4j(cypher: str) -> None:
+    """ingests cypher statements into neo4j database using run_cypher_real()"""
+    # split cypher into individual statements
+    statements = [stmt.strip() for stmt in cypher.split(';') if stmt.strip()]
+    
+    print(f"ingesting {len(statements)} cypher statements...")
+    
+    success_count = 0
+    error_count = 0
+    
+    for i, statement in enumerate(statements):
+        try:
+            print(f"executing statement {i+1}/{len(statements)}: {statement[:50]}...")
+            result = run_cypher_real(statement)
+            
+            # check if result indicates an error
+            if result and isinstance(result, list) and len(result) > 0:
+                if isinstance(result[0], dict) and result[0].get("status") == "database_error":
+                    print(f"error in statement {i+1}: {result[0].get('message', 'unknown error')}")
+                    error_count += 1
+                else:
+                    success_count += 1
+            else:
+                success_count += 1
+                
+        except Exception as e:
+            print(f"error executing statement {i+1}: {e}")
+            error_count += 1
+    
+    print(f"ingestion complete: {success_count} successful, {error_count} errors")
+    
+    if error_count > 0:
+        print("warning: some statements failed to execute")
+    
+    # verify ingestion with a simple count query
+    try:
+        count_result = run_cypher_real("MATCH (n) RETURN count(n) as total_nodes")
+        if count_result and len(count_result) > 0:
+            total_nodes = count_result[0].get("total_nodes", 0)
+            print(f"verification: {total_nodes} total nodes in database")
+    except Exception as e:
+        print(f"verification query failed: {e}")
 
 
 def save_pipeline_outputs(entities: list, schema: dict, cypher: str, input_file: str) -> None:
@@ -102,19 +154,21 @@ def save_pipeline_outputs(entities: list, schema: dict, cypher: str, input_file:
 
 def main():
     """cli entry point for build_graph.py"""
-    if len(sys.argv) != 2:
-        print("usage: python build_graph.py <input_file>")
+    if len(sys.argv) < 2:
+        print("usage: python build_graph.py <input_file> [--ingest]")
         print("example: python build_graph.py data/sample_input.txt")
+        print("example: python build_graph.py data/sample_input.txt --ingest")
         return
     
     input_file = sys.argv[1]
+    ingest_to_neo4j = "--ingest" in sys.argv
     
     # check if file exists
     if not os.path.exists(input_file):
         print(f"error: file not found: {input_file}")
         return
     
-    run_build_pipeline(input_file)
+    run_build_pipeline(input_file, ingest_to_neo4j)
 
 
 if __name__ == "__main__":

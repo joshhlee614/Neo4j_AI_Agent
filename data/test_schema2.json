@@ -1,0 +1,28 @@
+{
+  "nodes": {
+    "Movie": [
+      "name",
+      "year",
+      "genre"
+    ],
+    "Actor": [
+      "name",
+      "age",
+      "nationality"
+    ],
+    "Director": [
+      "name",
+      "age"
+    ]
+  },
+  "edges": {
+    "ACTED_IN": {
+      "from": "Actor",
+      "to": "Movie"
+    },
+    "DIRECTED": {
+      "from": "Director",
+      "to": "Movie"
+    }
+  }
+}

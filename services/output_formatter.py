@@ -1,3 +1,83 @@
+def format_table(results: list) -> str:
+    """format results as a clean table with headers"""
+    if not results:
+        return "no results found"
+    
+    # extract all unique column names from results
+    columns = set()
+    for record in results:
+        if isinstance(record, dict):
+            columns.update(record.keys())
+    
+    # filter out status columns and sort
+    columns = sorted([col for col in columns if col != 'status'])
+    
+    if not columns:
+        return "no data to display"
+    
+    # clean up column names for display
+    display_columns = []
+    for col in columns:
+        # convert p.name -> Name, c.name -> Country, etc.
+        if '.' in col:
+            prefix, suffix = col.split('.', 1)
+            if suffix == 'name':
+                if prefix == 'p':
+                    display_columns.append('Name')
+                elif prefix == 'c':
+                    display_columns.append('Country')
+                elif prefix == 'pr':
+                    display_columns.append('Product')
+                else:
+                    display_columns.append(suffix.title())
+            else:
+                display_columns.append(suffix.title())
+        else:
+            display_columns.append(col.title())
+    
+    # calculate column widths
+    col_widths = []
+    for i, col in enumerate(display_columns):
+        max_width = len(col)
+        for record in results:
+            if isinstance(record, dict):
+                value = str(record.get(columns[i], ''))
+                max_width = max(max_width, len(value))
+        col_widths.append(max_width + 2)  # padding
+    
+    # build table
+    table_lines = []
+    
+    # header separator
+    table_lines.append("┌" + "┬".join("─" * width for width in col_widths) + "┐")
+    
+    # header row
+    header_row = "│"
+    for i, col in enumerate(display_columns):
+        header_row += f" {col:<{col_widths[i]-1}}│"
+    table_lines.append(header_row)
+    
+    # separator between header and data
+    table_lines.append("├" + "┼".join("─" * width for width in col_widths) + "┤")
+    
+    # data rows
+    for record in results[:10]:  # limit to 10 results
+        if isinstance(record, dict):
+            row = "│"
+            for i, col in enumerate(columns):
+                value = str(record.get(col, ''))
+                row += f" {value:<{col_widths[i]-1}}│"
+            table_lines.append(row)
+    
+    # bottom border
+    table_lines.append("└" + "┴".join("─" * width for width in col_widths) + "┘")
+    
+    # add truncation note if needed
+    if len(results) > 10:
+        table_lines.append(f"\n({len(results)} total results, showing first 10)")
+    
+    return "\n".join(table_lines)
+
 def format_response(question: str, cypher_query: str, results: list) -> str:
     output = []
     
@@ -15,18 +95,6 @@ def format_response(question: str, cypher_query: str, results: list) -> str:
         output.append("- usa (country)")
     else:
         output.append("results:")
-        for i, record in enumerate(results[:10], 1):
-            if isinstance(record, dict):
-                items = []
-                for key, value in record.items():
-                    if key != 'status':
-                        items.append(f"{key}: {value}")
-                if items:
-                    output.append(f"- {', '.join(items)}")
-            else:
-                output.append(f"- {record}")
-        
-        if len(results) > 10:
-            output.append(f"... and {len(results) - 10} more results")
+        output.append(format_table(results))
     
     return "\n".join(output) 

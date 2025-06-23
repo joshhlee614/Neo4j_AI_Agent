@@ -4,7 +4,10 @@ def build_prompt(question: str) -> str:
     
     prompt = f"""you are a cypher expert. convert natural language questions to cypher queries.
 
+### Schema
+```
 {schema}
+```
 
 question: {question}
 

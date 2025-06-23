@@ -8,7 +8,7 @@ return your response as json with this format:
     "Person": ["name", "age"],
     "Company": ["name", "founded"]
   }},
-  "relationships": {{
+  "edges": {{
     "WORKS_FOR": {{"from": "Person", "to": "Company"}},
     "FRIENDS_WITH": {{"from": "Person", "to": "Person"}}
   }}

@@ -1,0 +1,7 @@
+[
+  {"entity": "Movie", "name": "The Matrix", "attributes": {"year": 1999, "genre": "Sci-Fi"}},
+  {"entity": "Actor", "name": "Keanu Reeves", "attributes": {"age": 59, "nationality": "Canadian"}},
+  {"entity": "Director", "name": "Lana Wachowski", "attributes": {"age": 58}},
+  {"relationship": "ACTED_IN", "from": "Keanu Reeves", "to": "The Matrix"},
+  {"relationship": "DIRECTED", "from": "Lana Wachowski", "to": "The Matrix"}
+] 

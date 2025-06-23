@@ -4,9 +4,9 @@ extract all relevant entities, their properties, and relationships from the foll
 
 return your response as a json list with this format:
 [
-  {"type": "entity", "label": "Person", "name": "alice", "properties": {"age": 30}},
-  {"type": "entity", "label": "Company", "name": "acme corp", "properties": {"founded": 1990}},
-  {"type": "relationship", "label": "WORKS_FOR", "from": "alice", "to": "acme corp"}
+  {{"entity": "Person", "name": "Alice", "attributes": {{"age": 30}}}},
+  {{"entity": "Company", "name": "Acme Corp", "attributes": {{"founded": 1990}}}},
+  {{"relationship": "FRIEND", "from": "Alice", "to": "Bob"}}
 ]
 
 text to analyze:

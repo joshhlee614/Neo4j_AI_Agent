@@ -29,9 +29,10 @@ def answer_question(question: str) -> str:
     cypher = generate_cypher(prompt)
     log_verbose(f"Generated Cypher: {cypher}")
     
-    # check if it's a safety message (not a query)
-    if cypher.startswith("I can only read data"):
-        log_verbose("Safety message detected, skipping database execution")
+    # check if it's an error message or explanation (not a query)
+    cypher_upper = cypher.upper().strip()
+    if not cypher_upper.startswith(('MATCH', 'CREATE', 'MERGE', 'RETURN', 'WITH')):
+        log_verbose("Error message or explanation detected, skipping database execution")
         return f"question: {question}\n\n🛡️  {cypher}"
     
     # execute query against database

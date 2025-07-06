@@ -53,10 +53,35 @@ def generate_cypher_mock(prompt: str) -> str:
 
 def extract_cypher_from_response(response_text: str) -> str:
     """extract cypher from llm response"""
+    # Check if the response is an error message or explanation
+    response_lower = response_text.lower().strip()
+    
+    # Common error message patterns
+    error_patterns = [
+        "i can only read data",
+        "that entity type does not exist",
+        "cannot modify",
+        "cannot delete",
+        "cannot create",
+        "not allowed",
+        "error:",
+        "sorry,",
+        "i cannot",
+        "i don't have access"
+    ]
+    
+    # If response starts with an error pattern, return it as is
+    for pattern in error_patterns:
+        if response_lower.startswith(pattern):
+            return response_text.strip()
+    
     # look for cypher in code blocks first
     cypher_match = re.search(r'```(?:cypher)?\s*(.*?)\s*```', response_text, re.DOTALL | re.IGNORECASE)
     if cypher_match:
-        return cypher_match.group(1).strip()
+        potential_cypher = cypher_match.group(1).strip()
+        # Validate it looks like Cypher
+        if potential_cypher.upper().startswith(('MATCH', 'CREATE', 'MERGE', 'RETURN', 'WITH')):
+            return potential_cypher
     
     # look for complete cypher query (multi-line)
     lines = response_text.split('\n')
@@ -86,7 +111,11 @@ def extract_cypher_from_response(response_text: str) -> str:
     if cypher_lines:
         return ' '.join(cypher_lines)
     
-    # fallback - return cleaned response
+    # Check if response looks like a valid Cypher query
+    if response_text.strip().upper().startswith(('MATCH', 'CREATE', 'MERGE', 'RETURN', 'WITH')):
+        return response_text.strip()
+    
+    # If we get here, it's likely an error message or explanation
     return response_text.strip()
 
 def generate_cypher_real(prompt: str) -> str:

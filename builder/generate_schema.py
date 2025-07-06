@@ -22,7 +22,7 @@ def generate_schema_from_entities(entities: list[dict]) -> dict:
         if os.getenv("USE_MOCK_LLM", "false").lower() == "true":
             raw_response = generate_schema_mock(entities)
         else:
-            raw_response = generate_schema_real(formatted_prompt)
+            raw_response = generate_schema_real(formatted_prompt, entities)
         
         # parse and return structured format
         return format_schema_output(raw_response)
@@ -86,10 +86,19 @@ def generate_schema_mock(entities: list[dict]) -> str:
     return json.dumps(schema, indent=2)
 
 
-def generate_schema_real(prompt: str) -> str:
+def generate_schema_real(prompt: str, entities: list[dict] = None) -> str:
     """real schema generation using openai"""
     if not client:
-        return generate_schema_mock([])
+        # Extract entities from prompt if not provided
+        if entities is None:
+            try:
+                # Try to extract entities from the prompt
+                entities_start = prompt.find("extracted entities and relationships:") + len("extracted entities and relationships:")
+                entities_text = prompt[entities_start:].strip()
+                entities = json.loads(entities_text)
+            except:
+                entities = []
+        return generate_schema_mock(entities)
     
     try:
         response = client.chat.completions.create(
@@ -104,6 +113,9 @@ def generate_schema_real(prompt: str) -> str:
     
     except Exception as e:
         print(f"error calling openai: {e}")
+        # Fall back to mock with entities if available
+        if entities:
+            return generate_schema_mock(entities)
         return '{"nodes": {}, "edges": {}}'
 
 

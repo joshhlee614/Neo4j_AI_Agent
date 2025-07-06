@@ -1,1399 +1,1347 @@
 [
   {
     "entity": "Person",
-    "name": "John Nuttall",
+    "name": "Callum McDougall",
     "attributes": {
-      "role": "author"
+      "email": "cal.s.mcdougall@gmail.com"
     }
   },
   {
     "entity": "Concept",
-    "name": "quantitative investment management",
-    "attributes": {
-      "description": "investment management based on quantitative analysis"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "equity portfolio management",
-    "attributes": {
-      "description": "management of portfolios consisting of equities"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "quantitative investing",
-    "attributes": {
-      "techniques": "Machine Learning"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "Machine Learning",
-    "attributes": {
-      "type": "technique"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "portfolio management",
-    "attributes": {
-      "description": "management of a portfolio of assets"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "assets",
-    "attributes": {
-      "type": "equities"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "universe",
-    "attributes": {
-      "definition": "set of assets"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "investment manager",
-    "attributes": {
-      "responsibilities": "increase portfolio value"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "benchmark",
-    "attributes": {
-      "comparison": "performance benchmark"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "volatility",
-    "attributes": {
-      "description": "measure of risk"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "drawdown",
-    "attributes": {
-      "description": "decrease in portfolio value"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "information collection",
-    "attributes": {
-      "steps": [
-        "raw data",
-        "derived data"
-      ]
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "raw data",
-    "attributes": {
-      "type": "data source"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "derived data",
-    "attributes": {
-      "type": "processed data"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "return prediction",
-    "attributes": {
-      "methods": [
-        "Extreme Theoretical",
-        "Intermediate",
-        "Extreme Empirical"
-      ]
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "portfolio formation",
-    "attributes": {
-      "steps": [
-        "Covariance Matrix",
-        "Optimization",
-        "Other Approaches"
-      ]
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "trading algorithm",
-    "attributes": {
-      "description": "algorithm used for trading decisions"
-    }
-  },
-  {
-    "entity": "Method",
-    "name": "Covariance Matrix",
-    "attributes": {
-      "type": "statistical method"
-    }
-  },
-  {
-    "entity": "Method",
-    "name": "Optimization",
-    "attributes": {
-      "type": "portfolio optimization"
-    }
-  },
-  {
-    "entity": "Method",
-    "name": "Machine Learning",
-    "attributes": {
-      "type": "data analysis technique"
-    }
-  },
-  {
-    "entity": "Market",
-    "name": "equity markets",
-    "attributes": {
-      "region": "global"
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "INTRODUCTION TO QUANTITATIVE INVESTMENT MANAGEMENT",
-    "attributes": {
-      "date": "February 2007"
-    }
-  },
-  {
-    "relationship": "WRITTEN_BY",
-    "from": "John Nuttall",
-    "to": "INTRODUCTION TO QUANTITATIVE INVESTMENT MANAGEMENT"
-  },
-  {
-    "entity": "Method",
-    "name": "back testing simulations",
+    "name": "quant trading",
     "attributes": {}
   },
   {
     "entity": "Concept",
-    "name": "portfolio management",
+    "name": "quant trader",
     "attributes": {}
   },
   {
     "entity": "Concept",
-    "name": "real-time data",
+    "name": "quant research",
     "attributes": {}
   },
   {
     "entity": "Concept",
-    "name": "historical data",
+    "name": "misconceptions",
     "attributes": {}
   },
   {
-    "entity": "Concept",
-    "name": "Raw Data",
+    "entity": "Skill",
+    "name": "maths genius",
     "attributes": {}
   },
   {
-    "entity": "Concept",
-    "name": "Derived Data",
+    "entity": "Skill",
+    "name": "good coder",
     "attributes": {}
   },
   {
-    "entity": "Concept",
-    "name": "predictors",
+    "entity": "Skill",
+    "name": "finance experience",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "amazing CV",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "small mistake in trading",
+    "attributes": {}
+  },
+  {
+    "entity": "Skill",
+    "name": "interested in quant trading",
     "attributes": {}
   },
   {
     "entity": "Market",
-    "name": "stock market",
+    "name": "quant finance",
     "attributes": {}
   },
   {
-    "entity": "Market",
-    "name": "T-bill rate",
-    "attributes": {}
+    "relationship": "WRITES",
+    "from": "Callum McDougall",
+    "to": "Quant Trading Guide"
   },
   {
-    "entity": "Market",
-    "name": "Industrial production",
-    "attributes": {}
+    "entity": "Concept",
+    "name": "quant trading",
+    "attributes": {
+      "focus": "quantitative trading"
+    }
   },
   {
-    "entity": "Market",
-    "name": "Rate of inflation",
-    "attributes": {}
+    "entity": "Concept",
+    "name": "quant research",
+    "attributes": {
+      "focus": "quantitative research"
+    }
   },
   {
-    "entity": "Market",
-    "name": "Government bonds rate",
-    "attributes": {}
+    "entity": "Concept",
+    "name": "market",
+    "attributes": {
+      "definition": "a place where buyers and sellers can meet to trade things"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "bid price",
+    "attributes": {
+      "definition": "the highest amount someone is willing to buy at"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "ask price",
+    "attributes": {
+      "definition": "the price someone is willing to sell at"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "bid-ask spread",
+    "attributes": {
+      "definition": "the difference between the bid and ask prices"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "trade",
+    "attributes": {
+      "definition": "occurs when a buyer and seller cross the bid-ask spread"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "liquidity",
+    "attributes": {
+      "definition": "the ability to trade on a market"
+    }
   },
   {
     "entity": "Company",
-    "name": "S&P500",
-    "attributes": {}
-  },
-  {
-    "entity": "Skill",
-    "name": "information processing",
-    "attributes": {}
-  },
-  {
-    "entity": "Skill",
-    "name": "stock return prediction",
-    "attributes": {}
-  },
-  {
-    "entity": "Skill",
-    "name": "data analysis",
-    "attributes": {}
-  },
-  {
-    "entity": "Tool",
-    "name": "pandas",
-    "attributes": {}
-  },
-  {
-    "relationship": "OBTAINS",
-    "from": "portfolio management",
-    "to": "real-time data"
-  },
-  {
-    "relationship": "REQUIRES",
-    "from": "portfolio management",
-    "to": "historical data"
-  },
-  {
-    "relationship": "DISTINGUISHES",
-    "from": "portfolio management",
-    "to": "Raw Data"
-  },
-  {
-    "relationship": "DISTINGUISHES",
-    "from": "portfolio management",
-    "to": "Derived Data"
-  },
-  {
-    "relationship": "USED_IN",
-    "from": "Derived Data",
-    "to": "information processing"
-  },
-  {
-    "relationship": "BASED_ON",
-    "from": "stock return prediction",
-    "to": "predictors"
-  },
-  {
-    "relationship": "USES",
-    "from": "information processing",
-    "to": "pandas"
-  },
-  {
-    "entity": "Person",
-    "name": "manager",
+    "name": "Investopedia",
     "attributes": {
-      "title": "investment management"
+      "type": "online resource"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "top trading firms",
+    "attributes": {
+      "type": "financial institutions"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "writing",
+    "attributes": {
+      "level": "proficient"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "applying",
+    "attributes": {
+      "level": "experienced"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "trading",
+    "attributes": {
+      "level": "expert"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "researching",
+    "attributes": {
+      "level": "intermediate"
     }
   },
   {
     "entity": "Publication",
-    "name": "[Ha96, Ba01]"
-  },
-  {
-    "entity": "Concept",
-    "name": "predictors",
+    "name": "guide",
     "attributes": {
-      "type": "stock specific"
+      "purpose": "provides advice and information"
     }
-  },
-  {
-    "entity": "Concept",
-    "name": "return prediction"
-  },
-  {
-    "entity": "Concept",
-    "name": "portfolio formation"
-  },
-  {
-    "entity": "Concept",
-    "name": "trading algorithm"
-  },
-  {
-    "entity": "Method",
-    "name": "return prediction"
-  },
-  {
-    "entity": "Method",
-    "name": "portfolio formation"
-  },
-  {
-    "entity": "Method",
-    "name": "trading algorithm"
-  },
-  {
-    "entity": "Skill",
-    "name": "investment management"
-  },
-  {
-    "entity": "Market",
-    "name": "stock market"
-  },
-  {
-    "entity": "Tool",
-    "name": "algorithms"
-  },
-  {
-    "entity": "Tool",
-    "name": "data processing software"
-  },
-  {
-    "relationship": "USES",
-    "from": "manager",
-    "to": "algorithms"
-  },
-  {
-    "relationship": "USES",
-    "from": "manager",
-    "to": "data processing software"
-  },
-  {
-    "entity": "Concept",
-    "name": "theory",
-    "attributes": {
-      "approach": "theoretical"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "empiricist",
-    "attributes": {
-      "belief": "markets are too complicated to understand by theory"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "economics",
-    "attributes": {
-      "comparison": "fundamentally different from physics"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "patterns",
-    "attributes": {
-      "discovery": "analyzing past data"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "Quantitative Equity Management",
-    "attributes": {
-      "definition": "extension of Technical Analysis as applied to equities"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "Technical Analysis",
-    "attributes": {
-      "prediction": "based on past market data"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "Machine Learning",
-    "attributes": {
-      "principles": "applied to QEM"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "Portfolio Formation",
-    "attributes": {
-      "strategy": "choosing weights of stocks in a portfolio"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "Markowitz",
-    "attributes": {
-      "reference": "[Ma59]"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "covariance matrix",
-    "attributes": {
-      "calculation": "used in portfolio variance calculation"
-    }
-  },
-  {
-    "entity": "Method",
-    "name": "optimization problem",
-    "attributes": {
-      "solving": "meeting portfolio constraints"
-    }
-  },
-  {
-    "entity": "Skill",
-    "name": "Machine Learning",
-    "attributes": {
-      "application": "principles applied to QEM"
-    }
-  },
-  {
-    "entity": "Skill",
-    "name": "portfolio management",
-    "attributes": {
-      "strategy": "choosing weights of stocks"
-    }
-  },
-  {
-    "entity": "Tool",
-    "name": "Machine Learning",
-    "attributes": {
-      "discipline": "used in a wide variety of fields"
-    }
-  },
-  {
-    "entity": "Market",
-    "name": "equities",
-    "attributes": {
-      "application": "Quantitative Equity Management"
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Technical Analysis",
-    "attributes": {
-      "reference": "[Pr02]"
-    }
-  },
-  {
-    "relationship": "APPLIES",
-    "from": "Quantitative Equity Management",
-    "to": "Technical Analysis"
-  },
-  {
-    "relationship": "USES",
-    "from": "Quantitative Equity Management",
-    "to": "Machine Learning"
   },
   {
     "relationship": "MENTIONS",
-    "from": "Portfolio Formation",
-    "to": "Markowitz"
+    "from": "guide",
+    "to": "quant trading"
   },
   {
-    "relationship": "DESCRIBES",
-    "from": "Portfolio Formation",
-    "to": "covariance matrix"
+    "relationship": "MENTIONS",
+    "from": "guide",
+    "to": "quant research"
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "guide",
+    "to": "market"
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "guide",
+    "to": "bid price"
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "guide",
+    "to": "ask price"
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "guide",
+    "to": "bid-ask spread"
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "guide",
+    "to": "trade"
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "guide",
+    "to": "liquidity"
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "guide",
+    "to": "Investopedia"
+  },
+  {
+    "relationship": "MENTIONS",
+    "from": "guide",
+    "to": "top trading firms"
   },
   {
     "entity": "Concept",
-    "name": "mean-variance optimization",
+    "name": "liquidity",
     "attributes": {
-      "alternative approaches": true
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "trading effectiveness",
-    "attributes": {
-      "efforts to improve": true
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "covariance matrix",
-    "attributes": {
-      "extensive literature": true
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "joint probability distribution",
-    "attributes": {
-      "definition": "rarely discussed"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "predicting variance",
-    "attributes": {
-      "via time series": true
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "GARCH models",
-    "attributes": {
-      "used to predict volatility": true
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "factor and principal component methods",
-    "attributes": {
-      "estimating covariance matrix": true
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Stanley et al",
-    "attributes": {
-      "involving random matrices": true
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Michaud",
-    "attributes": {
-      "view on accuracy of predicted covariance matrices": "not very high"
-    }
-  },
-  {
-    "entity": "Person",
-    "name": "Granger",
-    "attributes": {
-      "philosophy on averaging": true
-    }
-  },
-  {
-    "entity": "Person",
-    "name": "Breiman",
-    "attributes": {
-      "philosophy on averaging": true
-    }
-  },
-  {
-    "entity": "Person",
-    "name": "Michaud",
-    "attributes": {
-      "view on accuracy of predicted covariance matrices": "not very high"
-    }
-  },
-  {
-    "entity": "Company",
-    "name": "Barra",
-    "attributes": {
-      "supplier of estimated covariance matrices": true
-    }
-  },
-  {
-    "entity": "Company",
-    "name": "Northfield",
-    "attributes": {
-      "supplier of estimated covariance matrices": true
-    }
-  },
-  {
-    "entity": "Company",
-    "name": "APT",
-    "attributes": {
-      "supplier of estimated covariance matrices": true
-    }
-  },
-  {
-    "entity": "Company",
-    "name": "Quantal",
-    "attributes": {
-      "supplier of estimated covariance matrices": true
-    }
-  },
-  {
-    "entity": "Tool",
-    "name": "optimization software package",
-    "attributes": {
-      "included by commercial suppliers": true
-    }
-  },
-  {
-    "relationship": "INCLUDES",
-    "from": "Barra",
-    "to": "optimization software package"
-  },
-  {
-    "relationship": "INCLUDES",
-    "from": "Northfield",
-    "to": "optimization software package"
-  },
-  {
-    "relationship": "INCLUDES",
-    "from": "APT",
-    "to": "optimization software package"
-  },
-  {
-    "relationship": "INCLUDES",
-    "from": "Quantal",
-    "to": "optimization software package"
-  },
-  {
-    "entity": "Method",
-    "name": "quadratic programming",
-    "attributes": {
-      "type": "constrained"
-    }
-  },
-  {
-    "entity": "Method",
-    "name": "SVM",
-    "attributes": {
-      "author": "Collobert/Bengio"
+      "definition": "ability to buy or sell an asset without causing a significant price change"
     }
   },
   {
     "entity": "Concept",
-    "name": "portfolio formation",
+    "name": "bid-ask spread",
     "attributes": {
-      "approach": "directly from predictors"
+      "definition": "difference between the highest price a buyer is willing to pay and the lowest price a seller is willing to accept"
     }
   },
   {
-    "entity": "Method",
-    "name": "Machine Learning",
+    "entity": "Concept",
+    "name": "asymmetric information",
     "attributes": {
-      "formalism": "equity return prediction"
+      "definition": "when one party has more or better information than the other"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "market making",
+    "attributes": {
+      "definition": "quoting a bid and ask for a particular good or service"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "prop trading",
+    "attributes": {
+      "definition": "proprietary trading, trading with the firm's own money"
     }
   },
   {
     "entity": "Skill",
-    "name": "equity return prediction",
+    "name": "quantitative finance knowledge",
     "attributes": {
       "level": "advanced"
     }
   },
   {
     "entity": "Method",
-    "name": "Sample formation",
+    "name": "quantitative trading",
     "attributes": {
-      "description": "collect and organize information"
+      "type": "algorithmic"
     }
   },
   {
-    "entity": "Method",
-    "name": "Predictor function",
+    "entity": "Company",
+    "name": "hedge funds",
     "attributes": {
-      "description": "function of predictors for expected return"
+      "type": "investment firm"
     }
   },
   {
-    "entity": "Method",
-    "name": "Training",
+    "entity": "Person",
+    "name": "quant trader",
     "attributes": {
-      "description": "choosing parameters for predictor function"
+      "expertise": "quantitative trading"
     }
   },
   {
-    "entity": "Method",
-    "name": "Choices",
+    "relationship": "WORKS_FOR",
+    "from": "quant trader",
+    "to": "hedge funds"
+  },
+  {
+    "relationship": "APPLIES",
+    "from": "quant trader",
+    "to": "quantitative trading"
+  },
+  {
+    "entity": "Concept",
+    "name": "quant trading",
     "attributes": {
-      "description": "discussion of choices for QEM method"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "QEM method",
-    "attributes": {
-      "specificity": "choices must be made"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "times",
-    "attributes": {
-      "description": "set of past, present, and future times"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "periods",
-    "attributes": {
-      "description": "time intervals between successive times"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "stocks",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "universe",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "return",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "holding period",
-    "attributes": {
-      "length": "H"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "predictors",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "samples",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "prediction function",
-    "attributes": {}
-  },
-  {
-    "entity": "Method",
-    "name": "linear regression",
-    "attributes": {
-      "type": "statistical"
-    }
-  },
-  {
-    "entity": "Method",
-    "name": "learning",
-    "attributes": {}
-  },
-  {
-    "entity": "Method",
-    "name": "training",
-    "attributes": {}
-  },
-  {
-    "relationship": "PREDICTS",
-    "from": "prediction function",
-    "to": "return"
-  },
-  {
-    "relationship": "USES",
-    "from": "prediction function",
-    "to": "predictors"
-  },
-  {
-    "relationship": "USES",
-    "from": "prediction function",
-    "to": "samples"
-  },
-  {
-    "relationship": "USES",
-    "from": "learning",
-    "to": "samples"
-  },
-  {
-    "relationship": "USES",
-    "from": "learning",
-    "to": "predictor vector"
-  },
-  {
-    "relationship": "USES",
-    "from": "learning",
-    "to": "return"
-  },
-  {
-    "entity": "Concept",
-    "name": "acceptable function",
-    "attributes": {
-      "description": "closest to satisfying a relation"
-    }
-  },
-  {
-    "entity": "Concept",
-    "name": "prediction function",
-    "attributes": {
-      "description": "form for predicting future returns"
-    }
-  },
-  {
-    "entity": "Method",
-    "name": "linear regression",
-    "attributes": {
-      "type": "statistical"
+      "definition": "making trading decisions in real time"
     }
   },
   {
     "entity": "Skill",
-    "name": "parameter vector optimization",
+    "name": "strong quantitative skills",
     "attributes": {
-      "description": "finding the parameter vector that specifies the function"
+      "description": "required for quant trading"
     }
   },
   {
     "entity": "Skill",
-    "name": "distribution analysis",
+    "name": "decision making under uncertainty",
     "attributes": {
-      "description": "analyzing distribution of actual returns"
+      "description": "important for quant trading"
     }
   },
   {
     "entity": "Skill",
-    "name": "noise analysis",
+    "name": "intuition",
     "attributes": {
-      "description": "understanding noise in the process"
+      "description": "used in quant trading"
     }
   },
   {
     "entity": "Skill",
-    "name": "function form selection",
+    "name": "probabilities",
     "attributes": {
-      "description": "choosing a form for the prediction function"
+      "description": "important in quant trading"
     }
   },
   {
     "entity": "Skill",
-    "name": "search restriction",
+    "name": "risk management",
     "attributes": {
-      "description": "restricting search for prediction functions"
+      "description": "essential in quant trading"
     }
   },
   {
     "entity": "Skill",
-    "name": "acceptable function definition",
+    "name": "expected values",
     "attributes": {
-      "description": "defining acceptable functions"
+      "description": "relevant in quant trading"
     }
   },
   {
     "entity": "Skill",
-    "name": "fluctuation analysis",
+    "name": "strategy games",
     "attributes": {
-      "description": "analyzing fluctuations in predictor space"
+      "description": "enjoyment of strategy games is correlated with skill at quant trading"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "algorithms",
+    "attributes": {
+      "definition": "used in trading, but not suitable for all markets"
+    }
+  },
+  {
+    "entity": "Market",
+    "name": "illiquid markets",
+    "attributes": {
+      "description": "not suitable for algorithmic trading"
     }
   },
   {
     "entity": "Method",
-    "name": "mean squared error",
+    "name": "supervision",
     "attributes": {
-      "definition": "measures extent of error"
+      "description": "required for algorithms in trading"
     }
   },
   {
     "entity": "Method",
-    "name": "neural networks minimization",
+    "name": "risk management",
     "attributes": {
-      "difficulty": "finding global minimum"
+      "description": "important in trading"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "behavior analysis",
+    "attributes": {
+      "description": "used when algorithms behave weirdly"
     }
   },
   {
     "entity": "Concept",
-    "name": "holding period",
+    "name": "quant research",
     "attributes": {
-      "type": "financial"
+      "definition": "research in quantitative finance"
+    }
+  },
+  {
+    "relationship": "DIFFERS_FROM",
+    "from": "quant trading",
+    "to": "quant research"
+  },
+  {
+    "entity": "Concept",
+    "name": "quant research",
+    "attributes": {
+      "focus": "making models"
     }
   },
   {
     "entity": "Concept",
-    "name": "return prediction",
+    "name": "trading strategies",
     "attributes": {
-      "type": "financial"
+      "research": "spending time"
     }
   },
   {
     "entity": "Concept",
-    "name": "quantitative equity management",
+    "name": "backtesting",
     "attributes": {
-      "type": "investment"
+      "validation": "historical data"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "programming",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "data science",
+    "attributes": {
+      "level": "proficient"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "statistical learning",
+    "attributes": {
+      "level": "proficient"
     }
   },
   {
     "entity": "Skill",
     "name": "machine learning",
     "attributes": {
-      "type": "technical"
+      "level": "proficient"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "critical thinking",
+    "attributes": {
+      "focus": "hard problems"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "self-directed research",
+    "attributes": {
+      "independence": "no clear answers"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "creativity",
+    "attributes": {
+      "focus": "hypotheses and strategies"
     }
   },
   {
     "entity": "Company",
-    "name": "investment managers",
+    "name": "quant trading firms",
+    "attributes": {
+      "culture": "tech-like"
+    }
+  },
+  {
+    "entity": "Market",
+    "name": "quant trading",
+    "attributes": {
+      "culture": "tech-like"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "blog posts",
+    "attributes": {
+      "topic": "quant research"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "blog posts",
+    "attributes": {
+      "topic": "quant research"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "blog posts",
+    "attributes": {
+      "topic": "quant research"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "blog posts",
+    "attributes": {
+      "topic": "quant research"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "blog posts",
+    "attributes": {
+      "topic": "quant research"
+    }
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "quant research",
+    "to": "blog posts"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "quant research",
+    "to": "blog posts"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "quant research",
+    "to": "blog posts"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "quant research",
+    "to": "blog posts"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "quant research",
+    "to": "blog posts"
+  },
+  {
+    "entity": "Concept",
+    "name": "trading",
     "attributes": {
       "type": "financial"
     }
   },
   {
-    "entity": "Publication",
-    "name": "academic literature",
+    "entity": "Concept",
+    "name": "quant trading",
     "attributes": {
-      "field": "financial economics"
-    }
-  },
-  {
-    "relationship": "USES",
-    "from": "investment managers",
-    "to": "quantitative equity management"
-  },
-  {
-    "relationship": "APPLIES",
-    "from": "investment managers",
-    "to": "machine learning"
-  },
-  {
-    "entity": "Person",
-    "name": "Haugen",
-    "attributes": {
-      "role": "author"
+      "type": "financial"
     }
   },
   {
     "entity": "Concept",
-    "name": "Machine Learning",
+    "name": "investment banking",
     "attributes": {
-      "description": "ideas used in QEM method"
+      "type": "financial"
     }
   },
   {
     "entity": "Concept",
-    "name": "linear model",
+    "name": "work-life balance",
     "attributes": {
-      "description": "commonly used in fitting empirical data"
+      "importance": "high"
     }
   },
   {
-    "entity": "Concept",
-    "name": "predictors",
+    "entity": "Skill",
+    "name": "maths",
     "attributes": {
-      "description": "used in predicting returns of US stocks"
+      "level": "advanced"
     }
   },
   {
-    "entity": "Concept",
-    "name": "Box-Cox transformation",
+    "entity": "Skill",
+    "name": "programming",
     "attributes": {
-      "description": "used to normalize predictors"
+      "level": "intermediate"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "work ethic",
+    "attributes": {
+      "importance": "high"
     }
   },
   {
     "entity": "Method",
-    "name": "multi-linear regression",
+    "name": "quantitative analysis",
     "attributes": {
-      "description": "used to approximate values of parameters"
+      "type": "analytical"
     }
   },
   {
-    "entity": "Publication",
-    "name": "[Ha96]",
+    "entity": "Tool",
+    "name": "computers",
     "attributes": {
-      "title": "describes a model for predicting returns of US stocks"
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "[Ba01]",
-    "attributes": {
-      "title": "mentions linear function of predictors"
+      "type": "hardware"
     }
   },
   {
     "entity": "Market",
-    "name": "US stocks",
+    "name": "global markets",
     "attributes": {
-      "type": "equity"
+      "region": "worldwide"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "trading firm",
+    "attributes": {
+      "industry": "finance"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "investment bank",
+    "attributes": {
+      "industry": "finance"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "maths olympiads",
+    "attributes": {
+      "type": "competition"
+    }
+  },
+  {
+    "relationship": "WORKS_FOR",
+    "from": "intern",
+    "to": "trading firm"
+  },
+  {
+    "relationship": "WORKS_FOR",
+    "from": "intern",
+    "to": "investment bank"
+  },
+  {
+    "relationship": "USES",
+    "from": "traders",
+    "to": "computers"
+  },
+  {
+    "relationship": "APPLIES",
+    "from": "traders",
+    "to": "quantitative analysis"
+  },
+  {
+    "entity": "Skill",
+    "name": "mental maths",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "Optiver",
+    "attributes": {
+      "test": "numerical"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "probabilities",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "expected value",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "risk",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Bayesian statistics",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Method",
+    "name": "updating beliefs",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Tool",
+    "name": "odds ratios",
+    "attributes": {
+      "use": "adjust probabilities"
+    }
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "Bayesian statistics",
+    "to": "mental maths"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "Bayesian statistics",
+    "to": "trading"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "Bayesian statistics",
+    "to": "statistics"
+  },
+  {
+    "entity": "Concept",
+    "name": "linear regression",
+    "attributes": {
+      "use": "financial analysis"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "coding",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Tool",
+    "name": "Python",
+    "attributes": {
+      "use": "quant trading"
+    }
+  },
+  {
+    "entity": "Tool",
+    "name": "Jupyter Notebooks",
+    "attributes": {
+      "frequency of use": "high"
+    }
+  },
+  {
+    "entity": "Tool",
+    "name": "Numpy",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Tool",
+    "name": "Pandas",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Tool",
+    "name": "Scipy",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Tool",
+    "name": "Matplotlib",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "QuantConnect",
+    "attributes": {
+      "platform": "trading"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "Quantopian",
+    "attributes": {
+      "platform": "trading"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "FT",
+    "attributes": {
+      "type": "news source"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Bloomberg",
+    "attributes": {
+      "type": "news source"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Matt Levine's Money Stu",
+    "attributes": {
+      "type": "news source"
+    }
+  },
+  {
+    "relationship": "USES",
+    "from": "QuantConnect",
+    "to": "data science"
+  },
+  {
+    "relationship": "USES",
+    "from": "Quantopian",
+    "to": "data science"
+  },
+  {
+    "entity": "Company",
+    "name": "quant trading firms",
+    "attributes": {
+      "industry": "finance"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "referrals",
+    "attributes": {
+      "definition": "recommendations for business opportunities"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "job security",
+    "attributes": {
+      "definition": "stability of employment"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "noticing and learning from mistakes",
+    "attributes": {
+      "importance": "valued by quant trading firms"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "simulated trading",
+    "attributes": {
+      "importance": "training for junior traders"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "cultural awareness",
+    "attributes": {
+      "importance": "understanding workplace environment"
+    }
+  },
+  {
+    "entity": "Publication",
+    "name": "Guinness World Record",
+    "attributes": {
+      "achievement": "lamest possible"
+    }
+  },
+  {
+    "relationship": "VALUES",
+    "from": "quant trading firms",
+    "to": "noticing and learning from mistakes"
+  },
+  {
+    "relationship": "PROVIDES",
+    "from": "quant trading firms",
+    "to": "liquidity to markets"
+  },
+  {
+    "entity": "Person",
+    "name": "GiveWell",
+    "attributes": {
+      "role": "calculator"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "quant trading",
+    "attributes": {
+      "definition": "trading based on quantitative analysis"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Fermi Estimate",
+    "attributes": {
+      "definition": "rough estimation using common sense"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "maths",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "stats",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "computer science",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "data science",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "finance",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "game theory",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Company",
+    "name": "80,000 Hours",
+    "attributes": {
+      "industry": "career advice"
+    }
+  },
+  {
+    "entity": "Market",
+    "name": "quant trading industry",
+    "attributes": {
+      "region": "global"
     }
   },
   {
     "relationship": "MENTIONS",
-    "from": "Haugen",
-    "to": "Machine Learning"
+    "from": "GiveWell",
+    "to": "Fermi Estimate"
   },
   {
-    "relationship": "DESCRIBES",
-    "from": "[Ha96]",
-    "to": "predicting returns of US stocks"
+    "relationship": "PROVIDES",
+    "from": "GiveWell",
+    "to": "calculator"
   },
   {
-    "relationship": "APPLIES",
-    "from": "Haugen",
-    "to": "linear model"
+    "relationship": "RECOMMENDS",
+    "from": "80,000 Hours",
+    "to": "quant trading resources"
   },
   {
-    "relationship": "USES",
-    "from": "Haugen",
-    "to": "Box-Cox transformation"
-  },
-  {
-    "relationship": "APPLIES",
-    "from": "Haugen",
-    "to": "multi-linear regression"
-  },
-  {
-    "entity": "Person",
-    "name": "Haugen",
+    "entity": "Concept",
+    "name": "quant trading",
     "attributes": {
-      "role": "author"
+      "description": "trading based on quantitative analysis"
     }
   },
   {
-    "entity": "Company",
-    "name": "investment advisory firm",
-    "attributes": {}
-  },
-  {
     "entity": "Concept",
-    "name": "extrapolation",
-    "attributes": {}
-  },
-  {
-    "entity": "Method",
-    "name": "linear regression",
-    "attributes": {}
-  },
-  {
-    "entity": "Method",
-    "name": "portfolio formation",
-    "attributes": {}
-  },
-  {
-    "entity": "Skill",
-    "name": "investment advisory",
-    "attributes": {}
-  },
-  {
-    "entity": "Skill",
-    "name": "portfolio management",
-    "attributes": {}
-  },
-  {
-    "entity": "Publication",
-    "name": "Hanna and Ready",
-    "attributes": {}
-  },
-  {
-    "relationship": "BASED_ON",
-    "from": "investment advisory firm",
-    "to": "Haugen"
-  },
-  {
-    "relationship": "STUDIED_BY",
-    "from": "Hanna and Ready",
-    "to": "Haugen"
-  },
-  {
-    "relationship": "USES",
-    "from": "Haugen",
-    "to": "linear regression"
-  },
-  {
-    "relationship": "APPLIES",
-    "from": "Haugen",
-    "to": "portfolio formation"
-  },
-  {
-    "entity": "Concept",
-    "name": "Technical factors",
+    "name": "STEM subject",
     "attributes": {
-      "definition": "excess return of the stock"
+      "description": "science, technology, engineering, mathematics"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "feedback loops",
+    "attributes": {
+      "description": "process of receiving feedback and making adjustments"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "autonomy",
+    "attributes": {
+      "description": "ability to work independently"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "flat structure",
+    "attributes": {
+      "description": "lack of hierarchy and bureaucracy"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "quantitative analysis",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "problem-solving",
+    "attributes": {
+      "level": "expert"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "critical thinking",
+    "attributes": {
+      "level": "expert"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "communication",
+    "attributes": {
+      "level": "proficient"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "decision-making",
+    "attributes": {
+      "level": "proficient"
     }
   },
   {
     "entity": "Market",
-    "name": "S&P 500",
+    "name": "quant trading market",
     "attributes": {
-      "region": "US"
+      "region": "global"
+    }
+  },
+  {
+    "relationship": "LIKES",
+    "from": "STEM subject",
+    "to": "quant trading"
+  },
+  {
+    "relationship": "REQUIRES",
+    "from": "quant trading",
+    "to": "quantitative analysis"
+  },
+  {
+    "relationship": "REQUIRES",
+    "from": "quant trading",
+    "to": "problem-solving"
+  },
+  {
+    "relationship": "REQUIRES",
+    "from": "quant trading",
+    "to": "critical thinking"
+  },
+  {
+    "relationship": "REQUIRES",
+    "from": "quant trading",
+    "to": "communication"
+  },
+  {
+    "relationship": "REQUIRES",
+    "from": "quant trading",
+    "to": "decision-making"
+  },
+  {
+    "entity": "Company",
+    "name": "quant trading firms",
+    "attributes": {
+      "industry": "finance"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "job security",
+    "attributes": {
+      "description": "providing good education and training to employees"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "non-compete agreements",
+    "attributes": {
+      "description": "agreement not to work for a competitor for a period of time after leaving"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "flat structure",
+    "attributes": {
+      "description": "lack of hierarchical career progression"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "competitive industry",
+    "attributes": {
+      "description": "limited job opportunities and high competition"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "interviewing",
+    "attributes": {
+      "level": "advanced"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "job application",
+    "attributes": {
+      "level": "intermediate"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "career planning",
+    "attributes": {
+      "level": "intermediate"
+    }
+  },
+  {
+    "entity": "Skill",
+    "name": "risk management",
+    "attributes": {
+      "level": "advanced"
     }
   },
   {
     "entity": "Method",
-    "name": "extrapolation",
+    "name": "internship selection",
     "attributes": {
-      "accuracy": "low"
+      "type": "competitive"
     }
+  },
+  {
+    "entity": "Method",
+    "name": "job application strategy",
+    "attributes": {
+      "type": "diversification"
+    }
+  },
+  {
+    "entity": "Market",
+    "name": "quant trading market",
+    "attributes": {
+      "region": "global"
+    }
+  },
+  {
+    "relationship": "WORKS_FOR",
+    "from": "employees",
+    "to": "quant trading firms"
+  },
+  {
+    "relationship": "APPLIES",
+    "from": "applicants",
+    "to": "quant trading roles"
   },
   {
     "entity": "Person",
-    "name": "Haugen",
+    "name": "traders",
     "attributes": {
-      "role": "advisor"
+      "role": "professionals"
     }
   },
   {
-    "entity": "Method",
-    "name": "simulation",
+    "entity": "Concept",
+    "name": "internship offers",
     "attributes": {
-      "elements": "ML"
+      "value": "information"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "finance careers events",
+    "attributes": {
+      "type": "networking"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "application process",
+    "attributes": {
+      "effort": "low"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "interviews",
+    "attributes": {
+      "nature": "fun"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "education",
+    "attributes": {
+      "importance": "high"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "trading",
+    "attributes": {
+      "interaction": "frequent"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "projects",
+    "attributes": {
+      "value": "worthwhile and interesting"
+    }
+  },
+  {
+    "entity": "Concept",
+    "name": "Spring Week events",
+    "attributes": {
+      "target": "first or second years"
     }
   },
   {
     "entity": "Company",
-    "name": "Cooper",
+    "name": "firms",
     "attributes": {
-      "industry": "portfolio management"
+      "focus": "finance"
     }
   },
   {
     "entity": "Skill",
-    "name": "machine learning",
+    "name": "networking",
     "attributes": {
-      "application": "portfolio management"
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Cooper [Co99]",
-    "attributes": {
-      "type": "article"
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Ya06",
-    "attributes": {
-      "type": "working paper"
+      "importance": "high"
     }
   },
   {
     "entity": "Skill",
-    "name": "data analysis",
+    "name": "interviewing",
     "attributes": {
-      "technique": "ML"
+      "effectiveness": "high"
     }
   },
   {
-    "entity": "Concept",
-    "name": "predictors",
+    "entity": "Method",
+    "name": "applying for internships",
     "attributes": {
-      "definition": "variables used for prediction"
+      "recommended": true
     }
   },
   {
-    "entity": "Concept",
-    "name": "return prediction function",
+    "entity": "Method",
+    "name": "attending events",
     "attributes": {
-      "calculation": "deciles"
+      "benefit": "networking"
     }
   },
   {
-    "entity": "Skill",
-    "name": "statistical analysis",
+    "entity": "Method",
+    "name": "asking questions",
     "attributes": {
-      "method": "decile calculation"
+      "engagement": "high"
     }
   },
   {
-    "entity": "Concept",
-    "name": "deciles",
+    "entity": "Method",
+    "name": "learning about industry",
     "attributes": {
-      "definition": "dividing data into ten equal parts"
+      "importance": "high"
     }
   },
   {
-    "entity": "Concept",
-    "name": "historical distribution",
-    "attributes": {
-      "timeframe": "previous 15 years"
-    }
+    "relationship": "INTERACTS_WITH",
+    "from": "traders",
+    "to": "internship offers"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "internship offers",
+    "to": "applying for internships"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "finance careers events",
+    "to": "attending events"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "application process",
+    "to": "low effort"
+  },
+  {
+    "relationship": "RECOMMENDS",
+    "from": "interviews",
+    "to": "fun"
+  },
+  {
+    "relationship": "EMPHASIZES",
+    "from": "firms",
+    "to": "education"
+  },
+  {
+    "relationship": "INVOLVES",
+    "from": "firms",
+    "to": "trading"
+  },
+  {
+    "relationship": "PROVIDES",
+    "from": "firms",
+    "to": "projects"
+  },
+  {
+    "relationship": "TARGETS",
+    "from": "firms",
+    "to": "Spring Week events"
   },
   {
     "entity": "Person",
-    "name": "Cooper",
-    "attributes": {}
+    "name": "stu"
   },
   {
-    "entity": "Concept",
-    "name": "predicted return",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "stock",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "week",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "label",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "cell",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "predictor vector",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "prediction functions",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "step function",
-    "attributes": {}
-  },
-  {
-    "entity": "Concept",
-    "name": "portfolio",
-    "attributes": {}
-  },
-  {
-    "entity": "Publication",
-    "name": "ML Sec.1.2.2",
-    "attributes": {}
-  },
-  {
-    "entity": "Publication",
-    "name": "Cooper [C099]",
-    "attributes": {}
-  },
-  {
-    "entity": "Publication",
-    "name": "Haugen [Ha96]",
-    "attributes": {}
-  },
-  {
-    "entity": "Method",
-    "name": "procedure",
-    "attributes": {}
-  },
-  {
-    "entity": "Method",
-    "name": "elaboration",
-    "attributes": {}
-  },
-  {
-    "entity": "Method",
-    "name": "Portfolio Formation",
-    "attributes": {}
-  },
-  {
-    "entity": "Method",
-    "name": "ML method",
-    "attributes": {}
-  },
-  {
-    "entity": "Skill",
-    "name": "ML",
-    "attributes": {}
-  },
-  {
-    "entity": "Skill",
-    "name": "portfolio returns analysis",
-    "attributes": {}
-  },
-  {
-    "entity": "Skill",
-    "name": "continuous function approximation",
-    "attributes": {}
-  },
-  {
-    "entity": "Market",
-    "name": "stock market",
-    "attributes": {}
-  },
-  {
-    "relationship": "USES",
-    "from": "Cooper",
-    "to": "ML Sec.1.2.2"
-  },
-  {
-    "relationship": "USES",
-    "from": "Cooper",
-    "to": "Haugen [Ha96]"
-  },
-  {
-    "entity": "Method",
-    "name": "neural networks",
+    "entity": "Company",
+    "name": "university",
     "attributes": {
-      "global": true
-    }
-  },
-  {
-    "entity": "Method",
-    "name": "pseudo-local method",
-    "attributes": {
-      "continuous": true
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Investing for the Long Run when Returns Are Predictable",
-    "attributes": {
-      "author": "N. Barberis",
-      "year": 2000
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Estimating Nonlinear Effects of Management Styles in the US Equity Market",
-    "attributes": {
-      "authors": [
-        "D. di Bartolomeo",
-        "S. Warrick"
-      ],
-      "year": 2001
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Optimal Algorithmic Trading",
-    "attributes": {
-      "author": "D. di Bartolomeo",
-      "year": 2005
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Bagging predictors",
-    "attributes": {
-      "author": "L. Breiman",
-      "year": 1996
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Statistical modeling: The two cultures",
-    "attributes": {
-      "author": "L. Breiman",
-      "year": 2001
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Parametric Portfolio Policies: Exploiting Characteristics in the Cross-Section of Equity Returns",
-    "attributes": {
-      "authors": [
-        "M. W. Brandt",
-        "P. Santa-Clara",
-        "R. Valkanov"
-      ],
-      "year": 2005
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "Filter Rules Based on Price and Volume in Individual Security Overreaction",
-    "attributes": {
-      "author": "M. Cooper",
-      "year": 1999
-    }
-  },
-  {
-    "entity": "Publication",
-    "name": "SVMTorch: Support Vector Machines for Large-Scale Regression",
-    "attributes": {
-      "authors": [
-        "R. Collobert",
-        "S. Bengio"
-      ]
+      "type": "educational institution"
     }
   }
 ]

@@ -1,4 +1,132 @@
 {
-  "nodes": {},
-  "edges": {}
+  "nodes": {
+    "Person": [
+      "name",
+      "email",
+      "role",
+      "expertise"
+    ],
+    "Concept": [
+      "name",
+      "definition",
+      "category",
+      "focus",
+      "research",
+      "type",
+      "description",
+      "value",
+      "nature",
+      "interaction",
+      "target"
+    ],
+    "Skill": [
+      "name",
+      "level",
+      "domain",
+      "description",
+      "focus",
+      "importance",
+      "effectiveness"
+    ],
+    "Market": [
+      "name",
+      "region",
+      "assetClass",
+      "culture"
+    ],
+    "Company": [
+      "name",
+      "industry",
+      "founded",
+      "type",
+      "platform",
+      "test",
+      "focus"
+    ],
+    "Method": [
+      "name",
+      "type",
+      "description",
+      "recommended",
+      "benefit"
+    ],
+    "Tool": [
+      "name",
+      "language",
+      "purpose",
+      "frequencyOfUse",
+      "importance"
+    ],
+    "Publication": [
+      "name",
+      "author",
+      "year",
+      "purpose",
+      "topic",
+      "type",
+      "achievement"
+    ]
+  },
+  "edges": {
+    "WORKS_FOR": {
+      "from": "Person",
+      "to": "Company"
+    },
+    "USES": {
+      "from": "Person",
+      "to": "Tool"
+    },
+    "APPLIES": {
+      "from": "Person",
+      "to": "Method"
+    },
+    "TRADES_IN": {
+      "from": "Person",
+      "to": "Market"
+    },
+    "MENTIONS": {
+      "from": "Publication",
+      "to": "Concept"
+    },
+    "REQUIRES": {
+      "from": "Concept",
+      "to": "Skill"
+    },
+    "DIFFERS_FROM": {
+      "from": "Concept",
+      "to": "Concept"
+    },
+    "LIKES": {
+      "from": "Concept",
+      "to": "Concept"
+    },
+    "VALUES": {
+      "from": "Company",
+      "to": "Skill"
+    },
+    "PROVIDES": {
+      "from": "Company",
+      "to": "Concept"
+    },
+    "RECOMMENDS": {
+      "from": "Concept",
+      "to": "Concept"
+    },
+    "INTERACTS_WITH": {
+      "from": "Person",
+      "to": "Concept"
+    },
+    "EMPHASIZES": {
+      "from": "Company",
+      "to": "Concept"
+    },
+    "INVOLVES": {
+      "from": "Company",
+      "to": "Concept"
+    },
+    "TARGETS": {
+      "from": "Company",
+      "to": "Concept"
+    }
+  }
 }

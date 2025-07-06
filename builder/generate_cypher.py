@@ -190,50 +190,74 @@ def load_cypher_prompt() -> str:
 def generate_cypher_mock(schema: dict, entities: list[dict]) -> str:
     """mock cypher generation for testing"""
     cypher_statements = []
-    entity_vars = {}  # track variable names for relationships
+    entity_vars = {}  # map entity names to their variables
+    used_vars = set()  # track used variable names
+    var_counter = 0
     
-    # create nodes
+    # Helper function to get next available variable
+    def get_next_var():
+        nonlocal var_counter
+        var_counter += 1
+        return f"n{var_counter}"
+    
+    # First pass: create all nodes and assign variables
     for entity in entities:
         if "entity" in entity:
             entity_type = entity["entity"]
             entity_name = entity.get("name", "Unknown")
             
-            # create variable name (first letter + counter)
-            var_name = entity_type.lower()[0]
-            counter = 1
-            base_var = var_name
-            while var_name in entity_vars.values():
-                var_name = f"{base_var}{counter}"
-                counter += 1
+            # Skip if we've already seen this entity
+            if entity_name in entity_vars:
+                continue
             
+            # Get unique variable name
+            var_name = get_next_var()
             entity_vars[entity_name] = var_name
+            used_vars.add(var_name)
             
-            # build properties (exclude null values)
+            # Build properties (exclude null values)
             props = [f'name: "{entity_name}"']
             if "attributes" in entity:
                 for key, value in entity["attributes"].items():
-                    if value is not None and value != "null":  # exclude null values
+                    if value is not None and value != "null" and value != "":
                         # Sanitize property name
                         clean_key = sanitize_property_name(key)
                         if isinstance(value, str):
-                            props.append(f'{clean_key}: "{value}"')
-                        else:
+                            # Escape quotes in string values
+                            escaped_value = value.replace('"', '\\"')
+                            props.append(f'{clean_key}: "{escaped_value}"')
+                        elif isinstance(value, (int, float)):
                             props.append(f'{clean_key}: {value}')
+                        elif isinstance(value, bool):
+                            props.append(f'{clean_key}: {str(value).lower()}')
+                        elif isinstance(value, list):
+                            # Convert list to string representation
+                            list_str = str(value).replace("'", '"')
+                            props.append(f'{clean_key}: {list_str}')
             
             props_str = ", ".join(props)
             cypher_statements.append(f"MERGE ({var_name}:{entity_type} {{{props_str}}});")
     
-    # create relationships
+    # Second pass: create relationships
     for entity in entities:
         if "relationship" in entity:
             rel_type = entity["relationship"]
             from_name = entity.get("from", "")
             to_name = entity.get("to", "")
             
-            from_var = entity_vars.get(from_name, "a")
-            to_var = entity_vars.get(to_name, "b")
-            
-            cypher_statements.append(f"MERGE ({from_var})-[:{rel_type}]->({to_var});")
+            # Only create relationship if both entities exist
+            if from_name in entity_vars and to_name in entity_vars:
+                from_var = entity_vars[from_name]
+                to_var = entity_vars[to_name]
+                cypher_statements.append(f"MERGE ({from_var})-[:{rel_type}]->({to_var});")
+            else:
+                # Log missing entities for debugging
+                missing = []
+                if from_name not in entity_vars:
+                    missing.append(f"from: {from_name}")
+                if to_name not in entity_vars:
+                    missing.append(f"to: {to_name}")
+                print(f"warning: skipping relationship {rel_type} - missing entities: {', '.join(missing)}")
     
     return "\n".join(cypher_statements)
 
@@ -308,16 +332,56 @@ def format_cypher_output(raw_llm_response: str) -> str:
                     seen_statements.add(line)
                     cypher_lines.append(line)
         
-        # limit to reasonable number of statements
-        if len(cypher_lines) > 100:
-            print(f"warning: truncating {len(cypher_lines)} statements to 100")
-            cypher_lines = cypher_lines[:100]
+        # Validate and fix the Cypher statements
+        validated_cypher = validate_cypher_statements(cypher_lines)
         
-        return '\n'.join(cypher_lines)
+        # limit to reasonable number of statements
+        if len(validated_cypher) > 100:
+            print(f"warning: truncating {len(validated_cypher)} statements to 100")
+            validated_cypher = validated_cypher[:100]
+        
+        return '\n'.join(validated_cypher)
     
     except Exception as e:
         print(f"error formatting cypher: {e}")
         return raw_llm_response
+
+
+def validate_cypher_statements(cypher_lines: list[str]) -> list[str]:
+    """validates cypher statements to ensure all nodes have proper labels"""
+    validated_lines = []
+    
+    for line in cypher_lines:
+        # Check for unlabeled nodes in MERGE statements
+        if line.upper().startswith('MERGE'):
+            # Pattern to find nodes without labels: (variable) instead of (variable:Label)
+            import re
+            
+            # Find all node patterns in the statement
+            node_pattern = r'\(([^)]+)\)'
+            matches = re.findall(node_pattern, line)
+            
+            has_unlabeled_node = False
+            for match in matches:
+                # Check if node has a label (contains colon)
+                if ':' not in match and '-[' not in line:
+                    # This is an unlabeled node (but not a relationship pattern)
+                    print(f"warning: found unlabeled node in statement: {line}")
+                    has_unlabeled_node = True
+                    break
+                elif ':' not in match and '-[' in line:
+                    # This is a relationship with unlabeled nodes - skip it
+                    print(f"warning: found relationship with unlabeled nodes: {line}")
+                    has_unlabeled_node = True
+                    break
+            
+            # Skip statements with unlabeled nodes
+            if has_unlabeled_node:
+                continue
+        
+        validated_lines.append(line)
+    
+    return validated_lines
 
 
 def main():

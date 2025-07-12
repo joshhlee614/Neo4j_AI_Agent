@@ -2,69 +2,59 @@
   "nodes": {
     "Person": [
       "name",
-      "email",
       "role",
-      "expertise"
-    ],
-    "Concept": [
-      "name",
-      "definition",
-      "category",
-      "focus",
-      "research",
-      "type",
-      "description",
-      "value",
-      "nature",
-      "interaction",
-      "target"
-    ],
-    "Skill": [
-      "name",
-      "level",
-      "domain",
-      "description",
-      "focus",
-      "importance",
-      "effectiveness"
-    ],
-    "Market": [
-      "name",
-      "region",
-      "assetClass",
-      "culture"
+      "first_name",
+      "last_name"
     ],
     "Company": [
       "name",
       "industry",
       "founded",
+      "website"
+    ],
+    "Concept": [
+      "name",
+      "definition",
+      "category",
+      "asset_class",
       "type",
-      "platform",
-      "test",
-      "focus"
+      "approach",
+      "properties",
+      "guide"
+    ],
+    "Skill": [
+      "name",
+      "level",
+      "domain",
+      "ability",
+      "type",
+      "description"
     ],
     "Method": [
       "name",
       "type",
       "description",
-      "recommended",
-      "benefit"
+      "global",
+      "process"
     ],
     "Tool": [
       "name",
       "language",
-      "purpose",
-      "frequencyOfUse",
-      "importance"
+      "purpose"
+    ],
+    "Market": [
+      "name",
+      "region",
+      "asset_class"
     ],
     "Publication": [
       "name",
       "author",
       "year",
-      "purpose",
-      "topic",
-      "type",
-      "achievement"
+      "date",
+      "title",
+      "authors",
+      "edition"
     ]
   },
   "edges": {
@@ -89,44 +79,28 @@
       "to": "Concept"
     },
     "REQUIRES": {
-      "from": "Concept",
+      "from": "Method",
       "to": "Skill"
     },
-    "DIFFERS_FROM": {
+    "FOLLOWS": {
       "from": "Concept",
       "to": "Concept"
     },
-    "LIKES": {
-      "from": "Concept",
-      "to": "Concept"
+    "DESCRIBES": {
+      "from": "Publication",
+      "to": "Publication"
     },
-    "VALUES": {
-      "from": "Company",
-      "to": "Skill"
+    "DEMONSTRATES": {
+      "from": "Publication",
+      "to": "Publication"
     },
-    "PROVIDES": {
-      "from": "Company",
-      "to": "Concept"
+    "STUDIED_BY": {
+      "from": "Publication",
+      "to": "Person"
     },
-    "RECOMMENDS": {
-      "from": "Concept",
-      "to": "Concept"
-    },
-    "INTERACTS_WITH": {
+    "CITES": {
       "from": "Person",
-      "to": "Concept"
-    },
-    "EMPHASIZES": {
-      "from": "Company",
-      "to": "Concept"
-    },
-    "INVOLVES": {
-      "from": "Company",
-      "to": "Concept"
-    },
-    "TARGETS": {
-      "from": "Company",
-      "to": "Concept"
+      "to": "Publication"
     }
   }
 }

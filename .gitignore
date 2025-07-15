@@ -37,11 +37,12 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
-# Data files (except sample)
-data/*.pdf
-data/*.cypher
-data/*.json
-!data/sample_input.txt
+# Data files and folders
+data/knowledge_graph/
+data/nypd/data/
+# Keep sample files and scripts accessible
+!data/knowledge_graph/sample_input.txt
+!data/nypd/scripts/
 
 # Debug and temporary files
 debug_*.py
@@ -49,7 +50,7 @@ test_*.py
 *_debug.py
 
 # Project planning documents
+finished_tasks.md
 tasks.md
 architecture.md 
-7-12-tasks.md
 7-12-transcript.md

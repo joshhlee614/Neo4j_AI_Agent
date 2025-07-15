@@ -5,7 +5,6 @@ from builder.build_graph import run_build_pipeline
 
 
 def show_usage():
-    """display usage information"""
     print("neo4j ai assistant")
     print()
     print("usage:")
@@ -15,18 +14,15 @@ def show_usage():
     print()
     print("examples:")
     print("  python app.py \"who lives in france?\"")
-    print("  python app.py --build data/sample_input.txt")
-    print("  python app.py --build data/sample_input.pdf --ingest")
+    print("  python app.py --build data/knowledge_graph/sample_input.txt")
+    print("  python app.py --build data/knowledge_graph/sample_input.pdf --ingest")
 
 
 def main():
-    """main application entry point"""
-    # check for help or no arguments
     if len(sys.argv) == 1 or "--help" in sys.argv or "-h" in sys.argv:
         show_usage()
         return
     
-    # check for build mode
     if "--build" in sys.argv:
         try:
             build_index = sys.argv.index("--build")
@@ -38,7 +34,6 @@ def main():
             input_file = sys.argv[build_index + 1]
             ingest_to_neo4j = "--ingest" in sys.argv
             
-            # check if file exists
             if not os.path.exists(input_file):
                 print(f"error: file not found: {input_file}")
                 return
@@ -50,7 +45,6 @@ def main():
             print("-" * 50)
             print()
             
-            # run the build pipeline
             run_build_pipeline(input_file, ingest_to_neo4j)
             
             print()
@@ -67,12 +61,10 @@ def main():
             return
     
     else:
-        # q&a mode (existing functionality)
         print("neo4j ai assistant")
         print("ask questions about your knowledge graph")
         print("-" * 50)
         
-        # handle command line argument or prompt for input
         if len(sys.argv) > 1:
             question = " ".join(sys.argv[1:])
             print(f"your question: {question}")

@@ -2,7 +2,7 @@
 
 An LLM-powered system that builds knowledge graphs from documents and provides natural language querying capabilities. Upload PDFs or text files, automatically extract entities and relationships, and query the resulting graph using plain English.
 
-## 🚀 Features
+## Features
 
 ### Knowledge Graph Builder
 - **PDF/Text Ingestion**: Process PDFs, text files, and markdown documents
@@ -18,10 +18,10 @@ An LLM-powered system that builds knowledge graphs from documents and provides n
 - **Professional Output**: Clean table formatting and error handling
 - **Schema-Aware**: Only uses existing nodes, relationships, and properties
 
-## 🏗️ Architecture
+## Architecture
 
 ```
-📄 Document Input → 🧠 LLM Processing → 📊 Knowledge Graph → 💬 Natural Language Queries
+Document Input → LLM Processing → Knowledge Graph → Natural Language Queries
 
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   PDF/Text      │───▶│  Entity          │───▶│  Schema         │───▶│  Cypher         │
@@ -34,7 +34,7 @@ An LLM-powered system that builds knowledge graphs from documents and provides n
 └─────────────────┘    └──────────────────┘    └─────────────────┘
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Neo4j_AI_Agent/
@@ -60,13 +60,13 @@ Neo4j_AI_Agent/
 └── app.py                     # Main CLI interface
 ```
 
-## 🛠️ Requirements
+## Requirements
 
 - Python 3.8+
 - Neo4j database instance (Desktop, Cloud, or Enterprise)
 - OpenAI API key (optional - has mock mode)
 
-## 📦 Installation
+## Installation
 
 ```bash
 git clone https://github.com/yourusername/Neo4j_AI_Agent.git
@@ -74,7 +74,7 @@ cd Neo4j_AI_Agent
 pip install -r requirements.txt
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 Create a `.env` file with your settings:
 
@@ -95,7 +95,7 @@ USE_MOCK_NEO4J=false
 VERBOSE=false
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Build Knowledge Graph from Document
 
@@ -123,13 +123,13 @@ python app.py
 # Enter questions interactively
 ```
 
-## 📊 Example Workflow
+## Example Workflow
 
 1. **Upload Document**: Place PDF in `data/` directory
 2. **Build Graph**: `python app.py --build data/document.pdf --ingest`
 3. **Query Graph**: `python app.py "What entities were extracted?"`
 
-## 🔧 Development
+## Development
 
 ### Mock Mode Testing
 
@@ -150,25 +150,25 @@ python builder/extract_entities.py
 python builder/generate_schema.py data/entities.json
 ```
 
-## 🎯 Supported Domains
+## Supported Domains
 
 - **Financial Data**: Companies, markets, trading strategies
 - **Academic Papers**: Authors, institutions, research topics
 - **Business Documents**: Organizations, people, processes
 - **General Text**: Any domain with entities and relationships
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Add tests for new functionality
 4. Submit a pull request
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - OpenAI for GPT models
 - Neo4j for graph database technology

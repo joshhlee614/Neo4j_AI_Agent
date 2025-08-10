@@ -1,14 +1,51 @@
+import os
 from agent.schema_discovery import generate_schema_description, generate_dynamic_examples
 
 
+def get_nypd_schema_description():
+    """load the static nypd schema description if it exists"""
+    schema_file = "data/nypd/schema_description.txt"
+    if os.path.exists(schema_file):
+        with open(schema_file, 'r') as f:
+            return f.read()
+    return None
+
+
+def get_nypd_examples():
+    """specific examples for nypd crime data"""
+    return [
+        {
+            'question': 'How many incidents occurred in Brooklyn?',
+            'cypher': 'MATCH (i:Incident)-[:OCCURRED_IN]->(l:Location) WHERE tolower(l.borough) = tolower("Brooklyn") RETURN count(i) as incidents_in_brooklyn'
+        },
+        {
+            'question': 'Show all robbery incidents in Manhattan',
+            'cypher': 'MATCH (i:Incident)-[:CLASSIFIED_AS]->(o:Offense)-[:REPORTED_IN]->(l:Location) WHERE tolower(o.offenseDescription) CONTAINS "robbery" AND tolower(l.borough) = "manhattan" RETURN i, o, l LIMIT 10'
+        },
+        {
+            'question': 'What are the most common offense types?',
+            'cypher': 'MATCH (i:Incident)-[:CLASSIFIED_AS]->(o:Offense) RETURN o.offenseDescription, count(i) as incident_count ORDER BY incident_count DESC LIMIT 10'
+        },
+        {
+            'question': 'Find all felony cases with victims in their 20s',
+            'cypher': 'MATCH (i:Incident {lawCategory: "FELONY"})-[:INVOLVES_VICTIM]->(v:Victim) WHERE v.vicAgeGroup = "18-24" OR v.vicAgeGroup = "25-44" RETURN i, v LIMIT 10'
+        }
+    ]
+
+
 def build_prompt(question: str) -> str:
-    # get dynamic schema information
-    schema_description = generate_schema_description()
-    dynamic_examples = generate_dynamic_examples()
+    # try to get nypd specific schema first, fallback to dynamic discovery
+    nypd_schema = get_nypd_schema_description()
+    if nypd_schema:
+        schema_description = nypd_schema
+        examples = get_nypd_examples()
+    else:
+        schema_description = generate_schema_description()
+        examples = generate_dynamic_examples()[:10]
     
     # build examples section
     examples_text = ""
-    for example in dynamic_examples[:10]:  # use top 10 examples
+    for example in examples:  # use selected examples (nypd or dynamic)
         examples_text += f"Q: {example['question']}\n"
         examples_text += f"A: {example['cypher']}\n\n"
     

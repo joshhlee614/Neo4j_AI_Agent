@@ -1,0 +1,69 @@
+NYPD Crime Database Schema
+
+NODE TYPES:
+
+Incident
+- cmplntNum: complaint number (unique identifier)
+- cmplntStartDate: incident start date
+- cmplntEndDate: incident end date
+- cmplntStartTime: incident start time
+- cmplntEndTime: incident end time
+- crimeStatus: status (COMPLETED/ATTEMPTED)
+- lawCategory: law category (FELONY/MISDEMEANOR/VIOLATION)
+- spatialContext: spatial context (INSIDE/OUTSIDE/FRONT OF/etc)
+
+Location
+- borough: NYC borough name (MANHATTAN/BROOKLYN/QUEENS/BRONX/STATEN ISLAND)
+- precinct: police precinct number
+- lonLat: coordinates in POINT format
+
+Offense
+- offenseDescription: crime type description
+- offenseCode: numeric offense code
+- nypdCode: NYPD internal code
+
+Victim
+- vicId: victim identifier
+- vicAgeGroup: age range (18-24/25-44/45-64/65+/etc)
+- vicRace: race/ethnicity
+- vicSex: gender (M/F/etc)
+
+Suspect
+- suspId: suspect identifier
+- suspAgeGroup: age range (18-24/25-44/45-64/65+/etc)
+- suspRace: race/ethnicity
+- suspSex: gender (M/F/etc)
+
+RELATIONSHIPS:
+
+(:Incident)-[:OCCURRED_IN]->(:Location)
+- every incident happens at a specific location
+
+(:Incident)-[:CLASSIFIED_AS]->(:Offense)
+- every incident is classified as a specific offense type
+
+(:Incident)-[:INVOLVES_VICTIM]->(:Victim)
+- incidents have victims with demographic data
+
+(:Incident)-[:INVOLVES_SUSPECT]->(:Suspect)
+- incidents may have suspects with demographic data
+
+(:Offense)-[:REPORTED_IN]->(:Location)
+- track crime patterns by location
+
+(:Victim)-[:ENCOUNTERED_SUSPECT]->(:Suspect)
+- direct victim-suspect connections
+
+SAMPLE QUERIES:
+
+Count incidents by borough:
+MATCH (i:Incident)-[:OCCURRED_IN]->(l:Location) RETURN l.borough, COUNT(i) ORDER BY COUNT(i) DESC
+
+Find incidents in Manhattan:
+MATCH (i:Incident)-[:OCCURRED_IN]->(l:Location {borough: 'MANHATTAN'}) RETURN i
+
+Get all felony cases:
+MATCH (i:Incident {lawCategory: 'FELONY'}) RETURN i
+
+Find incidents by offense type:
+MATCH (i:Incident)-[:CLASSIFIED_AS]->(o:Offense {offenseDescription: 'GRAND LARCENY'}) RETURN i

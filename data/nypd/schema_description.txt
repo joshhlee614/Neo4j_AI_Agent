@@ -48,12 +48,6 @@ RELATIONSHIPS:
 (:Incident)-[:INVOLVES_SUSPECT]->(:Suspect)
 - incidents may have suspects with demographic data
 
-(:Offense)-[:REPORTED_IN]->(:Location)
-- track crime patterns by location
-
-(:Victim)-[:ENCOUNTERED_SUSPECT]->(:Suspect)
-- direct victim-suspect connections
-
 SAMPLE QUERIES:
 
 Count incidents by borough:
@@ -64,6 +58,9 @@ MATCH (i:Incident)-[:OCCURRED_IN]->(l:Location {borough: 'MANHATTAN'}) RETURN i
 
 Get all felony cases:
 MATCH (i:Incident {lawCategory: 'FELONY'}) RETURN i
+
+Find offense types in Manhattan:
+MATCH (i:Incident)-[:OCCURRED_IN]->(l:Location {borough: 'MANHATTAN'}), (i)-[:CLASSIFIED_AS]->(o:Offense) RETURN DISTINCT o.offenseDescription
 
 Find incidents by offense type:
 MATCH (i:Incident)-[:CLASSIFIED_AS]->(o:Offense {offenseDescription: 'GRAND LARCENY'}) RETURN i

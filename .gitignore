@@ -49,19 +49,6 @@ debug_*.py
 test_*.py
 *_debug.py
 
-# Project planning documents
-finished_tasks.md
-tasks.md
-architecture.md 
-7-12-transcript.md
-
-# helper tools
-CLAUDE.md
-context.md
-
-# working files
-data/nypd/phase1_findings.md
-data/nypd/schema_design.md
-data/nypd/nypd_demo_log.md
-data/nypd/questions_for_checkin.md
-data/nypd/seeker_notes.md
+# All markdown files except README.md
+*.md
+!README.md

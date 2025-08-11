@@ -49,6 +49,7 @@ debug_*.py
 test_*.py
 *_debug.py
 
-# All markdown files except README.md
+# All markdown files except README.md (recursive)
+**/*.md
 *.md
 !README.md
